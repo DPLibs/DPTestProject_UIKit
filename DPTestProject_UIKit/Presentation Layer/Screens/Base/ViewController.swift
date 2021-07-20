@@ -3,21 +3,20 @@ import UIKit
 
 public protocol ViewControllerInput: AnyObject { }
 
-open class ViewController<ViewModel: ViewModelInput>: UIViewController, ViewControllerInput {
+open class ViewController: UIViewController, ViewControllerInput {
     
     // MARK: - Props
-    open var model: ViewModel? {
+    open var _model: ViewModelInput? {
         didSet {
             self.setupModel()
         }
     }
     
     // MARK: - Lifecycle
-    public init(model: ViewModel) {
+    public init(_model: ViewModelInput) {
         super.init(nibName: nil, bundle: nil)
         
-        self.model = model
-        self.model?.output = self as? ViewModelOutput
+        self._model = _model
     }
     
     required public init?(coder: NSCoder) {

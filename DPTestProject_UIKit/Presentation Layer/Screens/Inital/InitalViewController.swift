@@ -10,62 +10,51 @@ import UIKit
 
 protocol InitalViewControllerInput: ViewControllerInput { }
 
-class InitalViewController: ViewController<InitalViewModel>, InitalViewControllerInput {
+class InitalViewController: ViewController, InitalViewControllerInput {
     
-//    // MARK: - Props
-//    var model: InitalViewModelInput? {
-//        didSet {
-//            self.setupModel()
-//        }
-//    }
-//
-//    lazy var titleLabel: UILabel = {
-//        let result = UILabel()
-//        result.textColor = .black
-//
-//        return result
-//    }()
-//
-//    // MARK: - Lifecycle
-//    init(model: InitalViewModel) {
-//        super.init(nibName: nil, bundle: nil)
-//
-//        self.model = model
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        self.setupComponets()
-//        self.setupModel()
-//    }
-//
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        self.setupStyles()
-//    }
-//
-//    func setupComponets() {
-//        self.titleLabel.removeFromSuperview()
-//        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        self.view.addSubview(self.titleLabel)
-//
-//        NSLayoutConstraint.activate([
-//            self.titleLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-//            self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-//        ])
-//    }
-//
-//    func setupStyles() {
-//        self.view.backgroundColor = .yellow
-//    }
-//
-//    func setupModel() {
-//        self.titleLabel.text = self.model?.title
-//    }
+    // MARK: - Props
+    var model: InitalViewModelInput? {
+        get {
+            self._model as? InitalViewModelInput
+        }
+        set {
+            self._model = newValue
+        }
+    }
+    
+    lazy var titleLabel: UILabel = {
+        let result = UILabel()
+        result.textColor = .black
+
+        return result
+    }()
+
+    // MARK: - Lifecycle
+    init(model: InitalViewModel) {
+        super.init(_model: model)
+    }
+    
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    // MARK: - Methods
+    override func setupComponets() {
+        self.titleLabel.removeFromSuperview()
+        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.titleLabel)
+
+        NSLayoutConstraint.activate([
+            self.titleLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+    }
+    
+    override func setupStyles() {
+        self.view.backgroundColor = .yellow
+    }
+    
+    override func setupModel() {
+        self.titleLabel.text = self.model?.title
+    }
 }

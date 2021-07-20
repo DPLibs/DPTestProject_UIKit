@@ -14,7 +14,7 @@ protocol InitalViewModelInput: ViewModelInput {
 protocol InitalViewModelOutput: ViewModelOutput { }
 
 struct InitalViewModel: InitalViewModelInput {
-    var output: ViewModelOutput?
+    var output: InitalViewModelOutput?
     
     let title = "title"
 }

@@ -7,12 +7,6 @@
 
 import Foundation
 
-public protocol ViewModelInput {
-    var output: ViewModelOutput? { get set }
-}
+public protocol ViewModelInput { }
 
 public protocol ViewModelOutput: AnyObject { }
-
-open class ViewModel: ViewModelInput {
-    public weak var output: ViewModelOutput?
-}
