@@ -1,0 +1,26 @@
+PODS:
+  - DPLibrary (2.2.2):
+    - KeychainSwift (~> 19.0)
+    - Kingfisher (~> 5.15.6)
+  - KeychainSwift (19.0.0)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
+
+DEPENDENCIES:
+  - DPLibrary
+
+SPEC REPOS:
+  trunk:
+    - DPLibrary
+    - KeychainSwift
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  DPLibrary: bd4100d7219dc59e96df8d75175fcfa8932e3030
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+
+PODFILE CHECKSUM: 52ab7de9e3106c258b637d18d460ce14a16b120e
+
+COCOAPODS: 1.10.1
