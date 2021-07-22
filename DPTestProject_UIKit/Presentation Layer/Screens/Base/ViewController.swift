@@ -6,17 +6,16 @@ public protocol ViewControllerInput: AnyObject { }
 open class ViewController: UIViewController, ViewControllerInput {
     
     // MARK: - Props
-    open var _model: ViewModelInput? {
-        didSet {
-            self.setupModel()
-        }
-    }
+    open var _model: ViewModelInput?
+    open var _router: ViewRouter?
     
     // MARK: - Lifecycle
     public init(_model: ViewModelInput) {
         super.init(nibName: nil, bundle: nil)
         
         self._model = _model
+        self._router = ViewRouter()
+        self._router?._viewController = self
     }
     
     required public init?(coder: NSCoder) {
@@ -41,5 +40,8 @@ open class ViewController: UIViewController, ViewControllerInput {
     
     open func setupStyles() { }
     
-    open func setupModel() { }
+    open func setupModel() {
+        self._model?._controller = self
+        self._model?._output = self as? ViewModelOutput
+    }
 }

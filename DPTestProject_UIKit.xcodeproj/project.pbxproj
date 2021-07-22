@@ -14,6 +14,9 @@
 		E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24326A74BE500817CBA /* InitalViewModel.swift */; };
 		E249F24726A7512B00817CBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24626A7512B00817CBA /* ViewController.swift */; };
 		E249F24926A7516F00817CBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24826A7516F00817CBA /* ViewModel.swift */; };
+		E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4C26AA17B100952E27 /* ViewRouter.swift */; };
+		E2514F5026AA192200952E27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4F26AA192200952E27 /* MainViewController.swift */; };
+		E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F5126AA192E00952E27 /* MainViewModel.swift */; };
 		E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */; };
 		E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24726A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld */; };
 		E2ABB24B26A73EF400A1BEEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		E249F24326A74BE500817CBA /* InitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewModel.swift; sourceTree = "<group>"; };
 		E249F24626A7512B00817CBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E249F24826A7516F00817CBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E2514F4C26AA17B100952E27 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		E2514F4F26AA192200952E27 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E2514F5126AA192E00952E27 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E2ABB23B26A73EEB00A1BEEB /* DPTestProject_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPTestProject_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2ABB24826A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPTestProject_UIKit.xcdatamodel; sourceTree = "<group>"; };
@@ -122,8 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				E249F24526A7511F00817CBA /* Base */,
-				E249F23F26A74B3500817CBA /* User */,
 				E249F23A26A749FC00817CBA /* Inital */,
+				E2514F4E26AA191500952E27 /* Main */,
+				E249F23F26A74B3500817CBA /* User */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -158,8 +165,18 @@
 			children = (
 				E249F24626A7512B00817CBA /* ViewController.swift */,
 				E249F24826A7516F00817CBA /* ViewModel.swift */,
+				E2514F4C26AA17B100952E27 /* ViewRouter.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E2514F4E26AA191500952E27 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E2514F4F26AA192200952E27 /* MainViewController.swift */,
+				E2514F5126AA192E00952E27 /* MainViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E2ABB23226A73EEB00A1BEEB = {
@@ -441,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */,
 				E249F24226A74B3500817CBA /* UserList.swift in Sources */,
 				E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */,
 				E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */,
@@ -449,6 +467,8 @@
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
 				E249F24926A7516F00817CBA /* ViewModel.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
+				E2514F5026AA192200952E27 /* MainViewController.swift in Sources */,
+				E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

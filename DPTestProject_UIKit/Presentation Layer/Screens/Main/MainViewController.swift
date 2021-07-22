@@ -1,22 +1,22 @@
 //
-//  InitalViewController.swift
+//  MainViewController.swift
 //  DPTestProject_UIKit
 //
-//  Created by Дмитрий Поляков on 20.07.2021.
+//  Created by Дмитрий Поляков on 23.07.2021.
 //
 
 import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol InitalViewControllerInput: ViewControllerInput { }
+protocol MainViewControllerInput: ViewControllerInput { }
 
-class InitalViewController: ViewController, InitalViewControllerInput {
+class MainViewController: ViewController, MainViewControllerInput {
     
     // MARK: - Props
-    var model: InitalViewModelInput? {
+    var model: MainViewModelInput? {
         get {
-            self._model as? InitalViewModelInput
+            self._model as? MainViewModelInput
         }
         set {
             self._model = newValue
@@ -31,22 +31,12 @@ class InitalViewController: ViewController, InitalViewControllerInput {
     }()
 
     // MARK: - Lifecycle
-    init(model: InitalViewModel) {
+    init(model: MainViewModel) {
         super.init(_model: model)
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
-            guard let self = self else { return }
-            
-            self._router?.showMain()
-        }
     }
     
     // MARK: - Methods
@@ -62,7 +52,7 @@ class InitalViewController: ViewController, InitalViewControllerInput {
     }
     
     override func setupStyles() {
-        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = .red
     }
     
     override func setupModel() {
@@ -73,10 +63,4 @@ class InitalViewController: ViewController, InitalViewControllerInput {
 }
 
 // MARK: - ViewModelOutput
-extension InitalViewController: InitalViewModelOutput {
-    
-    func provideLoadTitle(_ model: InitalViewModelInput) {
-        self.titleLabel.text = model.title
-    }
-    
-}
+extension InitalViewController: MainViewModelOutput { }
