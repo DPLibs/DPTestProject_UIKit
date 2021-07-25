@@ -25,15 +25,6 @@ class MainViewModel: ViewModel, MainViewModelInput {
         }
     }
     
-    weak var controller: MainViewControllerInput? {
-        get {
-            self._controller as? MainViewControllerInput
-        }
-        set {
-            self._controller = newValue
-        }
-    }
-    
     let title = "titleMain"
     
     // MARK: - Methods

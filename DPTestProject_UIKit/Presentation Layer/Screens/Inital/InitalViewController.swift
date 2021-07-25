@@ -25,7 +25,7 @@ class InitalViewController: ViewController, InitalViewControllerInput {
     
     lazy var titleLabel: UILabel = {
         let result = UILabel()
-        result.textColor = .black
+        result.textColor = AppTheme.current.mainTextColor
 
         return result
     }()
@@ -42,7 +42,7 @@ class InitalViewController: ViewController, InitalViewControllerInput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
             guard let self = self else { return }
             
             self._router?.showMain()
@@ -62,7 +62,7 @@ class InitalViewController: ViewController, InitalViewControllerInput {
     }
     
     override func setupStyles() {
-        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
     
     override func setupModel() {
@@ -73,10 +73,4 @@ class InitalViewController: ViewController, InitalViewControllerInput {
 }
 
 // MARK: - ViewModelOutput
-extension InitalViewController: InitalViewModelOutput {
-    
-    func provideLoadTitle(_ model: InitalViewModelInput) {
-        self.titleLabel.text = model.title
-    }
-    
-}
+extension InitalViewController: InitalViewModelOutput { }

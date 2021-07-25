@@ -17,12 +17,14 @@
 		E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4C26AA17B100952E27 /* ViewRouter.swift */; };
 		E2514F5026AA192200952E27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4F26AA192200952E27 /* MainViewController.swift */; };
 		E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F5126AA192E00952E27 /* MainViewModel.swift */; };
+		E2977A4E26ADC8F4005A323D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977A4D26ADC8F4005A323D /* AppTheme.swift */; };
 		E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */; };
 		E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24726A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld */; };
 		E2ABB24B26A73EF400A1BEEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */; };
 		E2ABB25926A73EF400A1BEEB /* DPTestProject_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB25826A73EF400A1BEEB /* DPTestProject_UIKitTests.swift */; };
 		E2ABB26426A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */; };
 		E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */; };
+		E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		E2514F4C26AA17B100952E27 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E2514F4F26AA192200952E27 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2514F5126AA192E00952E27 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E2977A4D26ADC8F4005A323D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		E2ABB23B26A73EEB00A1BEEB /* DPTestProject_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPTestProject_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2ABB24826A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPTestProject_UIKit.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTestProject_UIKitUITests.swift; sourceTree = "<group>"; };
 		E2ABB26526A73EF400A1BEEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppThemeTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,7 @@
 				E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */,
 				E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */,
 				E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */,
+				E2977A4D26ADC8F4005A323D /* AppTheme.swift */,
 			);
 			path = "Application Layer";
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 		E2ABB27426A73FE100A1BEEB /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				E2FDE65826ADD5D700E8F12F /* TableCells */,
 				E221846B26A74435009BEFFC /* LauchScreen */,
 				E249F23926A749EF00817CBA /* Screens */,
 			);
@@ -283,6 +289,22 @@
 				E221846526A743D8009BEFFC /* Info.plist */,
 			);
 			path = "Support Layer";
+			sourceTree = "<group>";
+		};
+		E2FDE65826ADD5D700E8F12F /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				E2FDE65926ADD5DD00E8F12F /* ChangeAppTheme */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		E2FDE65926ADD5DD00E8F12F /* ChangeAppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */,
+			);
+			path = ChangeAppTheme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,7 +489,9 @@
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
 				E249F24926A7516F00817CBA /* ViewModel.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
+				E2977A4E26ADC8F4005A323D /* AppTheme.swift in Sources */,
 				E2514F5026AA192200952E27 /* MainViewController.swift in Sources */,
+				E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */,
 				E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

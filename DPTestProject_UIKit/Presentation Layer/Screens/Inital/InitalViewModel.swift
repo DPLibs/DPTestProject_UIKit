@@ -9,13 +9,9 @@ import Foundation
 
 protocol InitalViewModelInput: ViewModelInput {
     var title: String { get }
-    
-    func loadTitle()
 }
 
-protocol InitalViewModelOutput: ViewModelOutput {
-    func provideLoadTitle(_ model: InitalViewModelInput)
-}
+protocol InitalViewModelOutput: ViewModelOutput {}
 
 class InitalViewModel: ViewModel, InitalViewModelInput {
     
@@ -29,19 +25,5 @@ class InitalViewModel: ViewModel, InitalViewModelInput {
         }
     }
     
-    weak var controller: InitalViewControllerInput? {
-        get {
-            self._controller as? InitalViewControllerInput
-        }
-        set {
-            self._controller = newValue
-        }
-    }
-    
-    let title = "title"
-    
-    // MARK: - Methods
-    func loadTitle() {
-        self.output?.provideLoadTitle(self)
-    }
+    let title = "DPTestProject_UIKit"
 }

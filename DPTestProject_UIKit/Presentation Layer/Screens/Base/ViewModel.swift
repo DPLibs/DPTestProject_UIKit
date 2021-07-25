@@ -8,7 +8,6 @@
 import Foundation
 
 public protocol ViewModelInput {
-    var _controller: ViewControllerInput? { get set }
     var _output: ViewModelOutput? { get set }
 }
 
@@ -17,7 +16,6 @@ public protocol ViewModelOutput: AnyObject { }
 open class ViewModel: ViewModelInput {
     
     // MARK: - Props
-    weak open var _controller: ViewControllerInput?
     weak open var _output: ViewModelOutput?
     
 }

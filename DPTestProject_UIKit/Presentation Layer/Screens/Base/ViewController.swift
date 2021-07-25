@@ -10,6 +10,10 @@ open class ViewController: UIViewController, ViewControllerInput {
     open var _router: ViewRouter?
     
     // MARK: - Lifecycle
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     public init(_model: ViewModelInput) {
         super.init(nibName: nil, bundle: nil)
         
@@ -41,7 +45,15 @@ open class ViewController: UIViewController, ViewControllerInput {
     open func setupStyles() { }
     
     open func setupModel() {
-        self._model?._controller = self
         self._model?._output = self as? ViewModelOutput
     }
+    
+    open func subscribeToNotifications(_ notifications: [Notification.Name]) {
+        notifications.forEach({
+            NotificationCenter.default.addObserver(self, selector: #selector(self.provideNotification(_:)), name: $0, object: nil)
+        })
+    }
+    
+    @objc
+    open func provideNotification(_ notification: Notification) {}
 }
