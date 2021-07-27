@@ -57,7 +57,7 @@ class MainViewController: ViewController, MainViewControllerInput {
     override func setupComponets() {
         self.navigationItem.title = "Settings"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
-        self.subscribeToNotifications([AppTheme.Style.didSetCurrent])
+        self.subscribeToNotifications([AppTheme.didSetCurrentNotification])
     }
     
     override func setupStyles() {
@@ -66,10 +66,11 @@ class MainViewController: ViewController, MainViewControllerInput {
     
     override func provideNotification(_ notification: Notification) {
         switch notification.name {
-        case AppTheme.Style.didSetCurrent:
-            print("!!!", AppTheme.current.style.rawValue)
+        
+        case AppTheme.didSetCurrentNotification:
             self.setupComponets()
             self.setupStyles()
+            
         default:
             break
         }

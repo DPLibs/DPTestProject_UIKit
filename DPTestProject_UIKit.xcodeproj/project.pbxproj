@@ -183,6 +183,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E284936926B098830063B14F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2977A4D26ADC8F4005A323D /* AppTheme.swift */,
+				E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E2ABB23226A73EEB00A1BEEB = {
 			isa = PBXGroup;
 			children = (
@@ -241,8 +250,7 @@
 			children = (
 				E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */,
 				E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */,
-				E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */,
-				E2977A4D26ADC8F4005A323D /* AppTheme.swift */,
+				E284936926B098830063B14F /* Resources */,
 			);
 			path = "Application Layer";
 			sourceTree = "<group>";

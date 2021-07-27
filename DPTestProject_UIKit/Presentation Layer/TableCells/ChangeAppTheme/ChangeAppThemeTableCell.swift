@@ -37,14 +37,14 @@ class ChangeAppThemeTableCell: UITableViewCell {
         var style: AppTheme.Style {
             didSet {
                 self.setupItems()
-                AppTheme.Style.current = self.style
+                AppTheme.current = .init(style: self.style)
             }
         }
         
         var useSystemStyle: Bool {
             didSet {
                 self.setupItems()
-                AppTheme.Style.useSystemStyle = self.useSystemStyle
+                AppTheme.useSystemStyle = self.useSystemStyle
             }
         }
         
@@ -59,8 +59,8 @@ class ChangeAppThemeTableCell: UITableViewCell {
         }
         
         init() {
-            self.style = AppTheme.Style.current
-            self.useSystemStyle = AppTheme.Style.useSystemStyle
+            self.style = AppTheme.current.style
+            self.useSystemStyle = AppTheme.useSystemStyle
             self.setupItems()
         }
     }
@@ -85,6 +85,12 @@ class ChangeAppThemeTableCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        self.setupViews()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         self.setupViews()
     }
