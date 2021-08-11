@@ -18,6 +18,7 @@ open class ViewController: UIViewController, ViewControllerInput {
         super.init(nibName: nil, bundle: nil)
         
         self._model = _model
+        
         self._router = ViewRouter()
         self._router?._viewController = self
     }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B8B055C2FD7AECA2B702881D /* Pods_DPTestProject_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE044DD3B6E8B6D56C1DE5B /* Pods_DPTestProject_UIKit.framework */; };
 		E221846E26A7444F009BEFFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E221846C26A7444F009BEFFC /* LaunchScreen.storyboard */; };
+		E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9226C3DB7C00121DEE /* AppTheme.swift */; };
+		E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */; };
+		E22ADF9826C3DF2D00121DEE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9726C3DF2D00121DEE /* TabBarController.swift */; };
 		E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F23B26A74A1000817CBA /* InitalViewController.swift */; };
 		E249F24226A74B3500817CBA /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24126A74B3500817CBA /* UserList.swift */; };
 		E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24326A74BE500817CBA /* InitalViewModel.swift */; };
@@ -17,7 +20,7 @@
 		E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4C26AA17B100952E27 /* ViewRouter.swift */; };
 		E2514F5026AA192200952E27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4F26AA192200952E27 /* MainViewController.swift */; };
 		E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F5126AA192E00952E27 /* MainViewModel.swift */; };
-		E2977A4E26ADC8F4005A323D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977A4D26ADC8F4005A323D /* AppTheme.swift */; };
+		E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */; };
 		E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */; };
 		E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB24726A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld */; };
 		E2ABB24B26A73EF400A1BEEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		E221846D26A7444F009BEFFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DPTestProject_UIKit/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E221846F26A74476009BEFFC /* .keep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
 		E221847126A74487009BEFFC /* .keep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
+		E22ADF9226C3DB7C00121DEE /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewRouter+Extensions.swift"; sourceTree = "<group>"; };
+		E22ADF9726C3DF2D00121DEE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E249F23B26A74A1000817CBA /* InitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
 		E249F24126A74B3500817CBA /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		E249F24326A74BE500817CBA /* InitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewModel.swift; sourceTree = "<group>"; };
@@ -62,7 +68,7 @@
 		E2514F4C26AA17B100952E27 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E2514F4F26AA192200952E27 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2514F5126AA192E00952E27 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		E2977A4D26ADC8F4005A323D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Libs+AppTheme.swift"; sourceTree = "<group>"; };
 		E2ABB23B26A73EEB00A1BEEB /* DPTestProject_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPTestProject_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2ABB24826A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPTestProject_UIKit.xcdatamodel; sourceTree = "<group>"; };
@@ -128,10 +134,26 @@
 			path = LauchScreen;
 			sourceTree = "<group>";
 		};
+		E22ADF9126C3DB4D00121DEE /* _Libs */ = {
+			isa = PBXGroup;
+			children = (
+				E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */,
+				E249F24526A7511F00817CBA /* UI */,
+			);
+			path = _Libs;
+			sourceTree = "<group>";
+		};
+		E22ADF9426C3DDEA00121DEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E249F23926A749EF00817CBA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E249F24526A7511F00817CBA /* Base */,
 				E249F23A26A749FC00817CBA /* Inital */,
 				E2514F4E26AA191500952E27 /* Main */,
 				E249F23F26A74B3500817CBA /* User */,
@@ -164,14 +186,15 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		E249F24526A7511F00817CBA /* Base */ = {
+		E249F24526A7511F00817CBA /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				E249F24626A7512B00817CBA /* ViewController.swift */,
 				E249F24826A7516F00817CBA /* ViewModel.swift */,
 				E2514F4C26AA17B100952E27 /* ViewRouter.swift */,
+				E22ADF9726C3DF2D00121DEE /* TabBarController.swift */,
 			);
-			path = Base;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		E2514F4E26AA191500952E27 /* Main */ = {
@@ -186,8 +209,8 @@
 		E284936926B098830063B14F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2977A4D26ADC8F4005A323D /* AppTheme.swift */,
 				E2ABB24A26A73EF400A1BEEB /* Assets.xcassets */,
+				E22ADF9226C3DB7C00121DEE /* AppTheme.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +240,7 @@
 		E2ABB23D26A73EEB00A1BEEB /* DPTestProject_UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E22ADF9126C3DB4D00121DEE /* _Libs */,
 				E2ABB27126A73F3200A1BEEB /* Application Layer */,
 				E2ABB27226A73FC900A1BEEB /* Data Layer */,
 				E2ABB27326A73FD100A1BEEB /* Domain Layer */,
@@ -250,6 +274,7 @@
 			children = (
 				E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */,
 				E2ABB24026A73EEB00A1BEEB /* SceneDelegate.swift */,
+				E22ADF9426C3DDEA00121DEE /* Extensions */,
 				E284936926B098830063B14F /* Resources */,
 			);
 			path = "Application Layer";
@@ -489,15 +514,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */,
+				E22ADF9826C3DF2D00121DEE /* TabBarController.swift in Sources */,
 				E249F24226A74B3500817CBA /* UserList.swift in Sources */,
 				E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */,
 				E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */,
 				E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */,
 				E249F24726A7512B00817CBA /* ViewController.swift in Sources */,
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
+				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
+				E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */,
 				E249F24926A7516F00817CBA /* ViewModel.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
-				E2977A4E26ADC8F4005A323D /* AppTheme.swift in Sources */,
+				E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */,
 				E2514F5026AA192200952E27 /* MainViewController.swift in Sources */,
 				E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */,
 				E2514F5226AA192E00952E27 /* MainViewModel.swift in Sources */,
