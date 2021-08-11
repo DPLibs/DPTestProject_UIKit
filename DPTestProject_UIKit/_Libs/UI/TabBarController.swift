@@ -8,6 +8,35 @@
 import Foundation
 import UIKit
 
+//class TabBarItem: UITabBarItem, Identifiable {
+//
+//    open var identifer: String
+//
+//    init(identifer: String, title: String?, image: UIImage?, tag: Int) {
+//        self.identifer = identifer
+//        
+//        super.init(title: title, image: image, tag: tag)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        self.identifer = ""
+//
+//        super.init(coder: coder)
+//    }
+//
+//    func setSelected(isSelected: Bool) {
+//
+//    }
+//
+//
+//}
+
+class TabBarView: UIView {
+    
+    
+    
+}
+
 class TabBarController: UITabBarController {
     
     lazy var buttons: [UIButton] = {
