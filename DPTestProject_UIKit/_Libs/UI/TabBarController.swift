@@ -10,20 +10,23 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    lazy var customTabBar: UIView = {
-        let result = UIView()
-        result.backgroundColor = .red
-        
-        let buttons: [UIButton] = self.items.map({
+    lazy var buttons: [UIButton] = {
+        self.items.map({
             let result = UIButton()
             result.setTitle($0.title, for: .normal)
             result.tag = $0.tag
             result.addTarget(self, action: #selector(self.tapButton(_:)), for: .touchUpInside)
+            result.backgroundColor = $0.tag == self.selectedIndex ? .darkGray : .clear
             
             return result
         })
+    }()
+    
+    lazy var customTabBar: UIView = {
+        let result = UIView()
+        result.backgroundColor = .red
         
-        let stackView = UIStackView(arrangedSubviews: buttons)
+        let stackView = UIStackView(arrangedSubviews: self.buttons)
         stackView.distribution = .fillEqually
         stackView.axis = .horizontal
         
@@ -44,6 +47,10 @@ class TabBarController: UITabBarController {
     @objc
     private func tapButton(_ button: UIButton) {
         self.selectedIndex = button.tag
+        
+        self.buttons.forEach({
+            $0.backgroundColor = $0.tag == self.selectedIndex ? .darkGray : .clear
+        })
     }
     
     var items: [UITabBarItem] {
@@ -77,7 +84,8 @@ class TabBarController: UITabBarController {
                 result.view.backgroundColor = .gray
             }
             
-            return result
+            let nav = UINavigationController(rootViewController: result)
+            return nav
         })
         
         self.view.backgroundColor = .yellow
@@ -91,7 +99,7 @@ class TabBarController: UITabBarController {
             self.customTabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40),
             self.customTabBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             self.customTabBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
-            self.customTabBar.heightAnchor.constraint(equalToConstant: 100)
+            self.customTabBar.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
