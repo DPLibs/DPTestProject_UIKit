@@ -8,36 +8,57 @@
 import Foundation
 import UIKit
 
-//class TabBarItem: UITabBarItem, Identifiable {
-//
-//    open var identifer: String
-//
-//    init(identifer: String, title: String?, image: UIImage?, tag: Int) {
-//        self.identifer = identifer
-//        
-//        super.init(title: title, image: image, tag: tag)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        self.identifer = ""
-//
-//        super.init(coder: coder)
-//    }
-//
-//    func setSelected(isSelected: Bool) {
-//
-//    }
-//
-//
-//}
-
-class TabBarView: UIView {
+open class TabBarItemView: UIView {
     
+    open func setSelected(_ isSelected: Bool, animated: Bool) {
+        self.didSelected?(isSelected)
+    }
+    
+    open var didSelected: ((Bool) -> Void)?
+    
+}
+
+open class TabBarView: UIView {
+    
+    open var itemsViews: [TabBarItemView] = [] {
+        didSet {
+            self.itemsViews.enumerated().forEach({ index, itemView in
+                itemView.didSelected = { [weak self] isSelected in
+                    if isSelected {
+                        self?.selectedIndex = index
+                    }
+                }
+            })
+        }
+    }
+    
+    open var selectedIndex: Int? {
+        didSet {
+            guard let index = self.selectedIndex, self.itemsViews.indices.contains(index) else { return }
+            
+            
+        }
+    }
+    
+//    open var leadingConstant: CGFloat = .zero
+//    open var trailingConstant: CGFloat = .zero
+//    open var bottomConstant: CGFloat = .zero
+//    open var heightConstant: CGFloat = .zero
+    
+//    weak var tabBarController: UITabBarController? {
+//        didSet {
+//            self.setupViews()
+//        }
+//    }
+//
+//    open func setupViews() {
+//
+//    }
     
     
 }
 
-class TabBarController: UITabBarController {
+open class TabBarController: UITabBarController {
     
     lazy var buttons: [UIButton] = {
         self.items.map({
@@ -91,7 +112,7 @@ class TabBarController: UITabBarController {
         ]
     }
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupViews()
@@ -130,7 +151,13 @@ class TabBarController: UITabBarController {
             self.customTabBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             self.customTabBar.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        
     }
     
-    
+    open override var selectedIndex: Int {
+        didSet {
+            print("!!!", self.tabBar.selectedItem)
+        }
+    }
 }
