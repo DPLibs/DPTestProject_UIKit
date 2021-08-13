@@ -27,6 +27,7 @@
 		E2ABB25926A73EF400A1BEEB /* DPTestProject_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB25826A73EF400A1BEEB /* DPTestProject_UIKitTests.swift */; };
 		E2ABB26426A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */; };
 		E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */; };
+		E2D7645326C5B2D30000F4B6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7645226C5B2D30000F4B6 /* TabBarView.swift */; };
 		E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTestProject_UIKitUITests.swift; sourceTree = "<group>"; };
 		E2ABB26526A73EF400A1BEEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2D7645226C5B2D30000F4B6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppThemeTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,10 +191,10 @@
 		E249F24526A7511F00817CBA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E2D7645126C5B2BE0000F4B6 /* TabBar */,
 				E249F24626A7512B00817CBA /* ViewController.swift */,
 				E249F24826A7516F00817CBA /* ViewModel.swift */,
 				E2514F4C26AA17B100952E27 /* ViewRouter.swift */,
-				E22ADF9726C3DF2D00121DEE /* TabBarController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -322,6 +324,15 @@
 				E221846526A743D8009BEFFC /* Info.plist */,
 			);
 			path = "Support Layer";
+			sourceTree = "<group>";
+		};
+		E2D7645126C5B2BE0000F4B6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E22ADF9726C3DF2D00121DEE /* TabBarController.swift */,
+				E2D7645226C5B2D30000F4B6 /* TabBarView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		E2FDE65826ADD5D700E8F12F /* TableCells */ = {
@@ -513,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D7645326C5B2D30000F4B6 /* TabBarView.swift in Sources */,
 				E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */,
 				E22ADF9826C3DF2D00121DEE /* TabBarController.swift in Sources */,
 				E249F24226A74B3500817CBA /* UserList.swift in Sources */,
