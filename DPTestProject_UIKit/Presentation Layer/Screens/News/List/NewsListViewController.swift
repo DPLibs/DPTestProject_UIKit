@@ -61,7 +61,7 @@ class NewsListViewController: ViewController, NewsListViewControllerInput {
     }
     
     override func setupStyles() {
-        self.view.backgroundColor = .red //AppTheme.current.mainBackgroundColor
+        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
     
     override func setupModel() {

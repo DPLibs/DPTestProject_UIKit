@@ -11,26 +11,15 @@ import UIKit
 open class TabBarView: UIView {
     
     // MARK: - Props
-    open var didSetSelectedIndex: ((Int) -> Void)?
+    open var didSelectIndex: ((Int) -> Void)?
     
-    open var items: [UITabBarItem] = [] {
-        didSet {
-            self.updateViews()
-        }
-    }
+    open private(set) var itemsViews: [TabBarItemView] = []
     
-    open private(set) var itemsViews: [TabBarItemViewInput] = []
-    
-    public lazy var contentView: UIView = {
-        let result = UIView()
-        
-        return result
-    }()
-    
-    public lazy var stackContentView: UIStackView = {
+    public lazy var stackView: UIStackView = {
         let result = UIStackView()
         result.axis = .horizontal
         result.distribution = .fillEqually
+        result.spacing = 4
         
         return result
     }()
@@ -59,20 +48,20 @@ open class TabBarView: UIView {
         }
     }
     
-    open var contentHeightConstant: CGFloat = 48 {
+    open var stackHeightConstant: CGFloat = 48 {
         didSet {
-            self.setContentView()
+            self.setStackView()
         }
     }
     
-    open var contentInsets: NSDirectionalEdgeInsets = .init(
-        top: 4,
+    open var stackInsets: NSDirectionalEdgeInsets = .init(
+        top: 8,
         leading: 8,
         bottom: -(UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0),
         trailing: -8
     ) {
         didSet {
-            self.setContentView()
+            self.setStackView()
         }
     }
     
@@ -89,20 +78,22 @@ open class TabBarView: UIView {
         self.setupViews()
     }
     
-    convenience init(items: [UITabBarItem]) {
+    convenience init(items: [TabBarItem]) {
         self.init(frame: .zero)
         
-        self.items = items
-        self.updateViews()
+        self.setItemsViews(from: items)
     }
     
     // MARK: - Methods
+    open var additionalSafeAreaInsetsBottom: CGFloat {
+        self.stackHeightConstant
+    }
+    
     open func setupViews() {
         self.backgroundColor = .lightGray
         
         self.setSelf()
-        self.setContentView()
-        self.setStackContentView()
+        self.setStackView()
     }
     
     open func setSelf() {
@@ -119,30 +110,17 @@ open class TabBarView: UIView {
         ])
     }
     
-    open func setContentView() {
-        self.contentView.removeFromSuperview()
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(self.contentView)
+    open func setStackView() {
+        self.stackView.removeFromSuperview()
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.stackView)
         
         NSLayoutConstraint.activate([
-            self.contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: self.contentInsets.top),
-            self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: self.contentInsets.bottom),
-            self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.contentInsets.leading),
-            self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: self.contentInsets.trailing),
-            self.contentView.heightAnchor.constraint(equalToConstant: self.contentHeightConstant)
-        ])
-    }
-    
-    open func setStackContentView() {
-        self.stackContentView.removeFromSuperview()
-        self.stackContentView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(self.stackContentView)
-        
-        NSLayoutConstraint.activate([
-            self.stackContentView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.stackContentView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            self.stackContentView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            self.stackContentView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: self.stackInsets.top),
+            self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: self.stackInsets.bottom),
+            self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.stackInsets.leading),
+            self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: self.stackInsets.trailing),
+            self.stackView.heightAnchor.constraint(equalToConstant: self.stackHeightConstant)
         ])
     }
     
@@ -150,25 +128,17 @@ open class TabBarView: UIView {
         self.tabBarController = tabBarController
     }
     
-    open class func removeFromTabBarController(_ tabBarController: UITabBarController) {
-        tabBarController.view.subviews.forEach({ subview in
-            guard subview is TabBarView else { return }
-            
-            subview.removeFromSuperview()
-        })
-    }
-    
-    open func updateViews() {
-        self.stackContentView.subviews.forEach({ $0.removeFromSuperview() })
+    open func setItemsViews(from items: [TabBarItem]) {
+        self.stackView.subviews.forEach({ $0.removeFromSuperview() })
         
-        self.itemsViews = self.items.map({ TabBarItemView(item: $0) })
+        self.itemsViews = items.map({ TabBarItemView(item: $0) })
         
         self.itemsViews.forEach({ itemView in
             itemView.didSelected = { [weak self] in
-                self?.didSetSelectedIndex?(itemView.item.tag)
+                self?.didSelectIndex?(itemView.item.tag)
             }
             
-            self.stackContentView.addArrangedSubview(itemView)
+            self.stackView.addArrangedSubview(itemView)
         })
     }
     

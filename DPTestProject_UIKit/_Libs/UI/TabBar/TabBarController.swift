@@ -8,11 +8,19 @@
 import Foundation
 import UIKit
 
-open class TabBarController: UITabBarController {
+public protocol TabBarControllerInput: AnyObject {
+    var selectedIndex: Int { get set }
+    var selectedItem: TabBarItem? { get set }
+}
+ 
+open class TabBarController: UITabBarController, TabBarControllerInput {
     
     // MARK: - Props
+    open var items: [TabBarItem] = []
+    
     open var tabBarView: TabBarView? {
         didSet {
+            oldValue?.removeFromSuperview()
             self.setTabBarView()
         }
     }
@@ -30,40 +38,33 @@ open class TabBarController: UITabBarController {
         }
     }
     
-    open func setupComponets() {
-        self.view.backgroundColor = .yellow
-        
-        let tabBarView = TabBarView(itemsViews: [
-            TabBarItemView(item: .init(title: "News", image: nil, tag: 0)),
-            TabBarItemView(item: .init(title: "222", image: nil, tag: 1)),
-            TabBarItemView(item: .init(title: "333", image: nil, tag: 2)),
-            TabBarItemView(item: .init(title: "444", image: nil, tag: 3))
-        ], selectedIndex: 0)
-        
-        self.viewControllers = tabBarView.itemsViews.map({ _ in
-            let result = NewsListViewController(model: .init())
+    open var selectedItem: TabBarItem? {
+        get {
+            self.items.first(where: { $0.tag == self.selectedIndex })
+        }
+        set {
+            guard let tag = newValue?.tag, self.items.contains(where: { $0.tag == tag }) else { return }
             
-            return result
-        })
-        
-        self.tabBarView = tabBarView
+            self.selectedIndex = tag
+        }
     }
     
+    open func setupComponets() { }
+    
     open func setTabBarView() {
-        TabBarView.removeFromTabBarController(self)
-        
         if let tabBarView = self.tabBarView {
             tabBarView.addToTabBarController(self)
+            tabBarView.setSelectedIndex(self.selectedIndex, animated: false)
             
-            tabBarView.didSetSelectedIndex = { [weak self] selectedIndex in
+            tabBarView.didSelectIndex = { [weak self] selectedIndex in
                 self?.selectedIndex = selectedIndex
             }
             
             self.tabBar.isHidden = true
-            self.additionalSafeAreaInsets.bottom = 48
+            self.additionalSafeAreaInsets.bottom = tabBarView.additionalSafeAreaInsetsBottom
         } else {
             self.tabBar.isHidden = false
-            self.additionalSafeAreaInsets.bottom = 0
+            self.additionalSafeAreaInsets.bottom = .zero
         }
     }
 }

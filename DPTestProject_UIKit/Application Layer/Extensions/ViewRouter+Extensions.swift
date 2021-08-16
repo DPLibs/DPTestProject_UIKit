@@ -10,13 +10,12 @@ import UIKit
 
 extension ViewRouter {
     
-    func showMain() {
-//        let vc = MainViewController(model: .init())
-//        let nav = UINavigationController(rootViewController: vc)
-        
-        let vc = TabBarController()
-        
+    @discardableResult
+    func showMain() -> MainTabBarControllerInput {
+        let vc = MainTabBarController()
         self.setupRootController(vc)
+        
+        return vc
     }
     
 }

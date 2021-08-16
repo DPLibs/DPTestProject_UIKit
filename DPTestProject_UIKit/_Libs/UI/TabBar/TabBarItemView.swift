@@ -8,17 +8,10 @@
 import Foundation
 import UIKit
 
-public protocol TabBarItemViewInput: UIView {
-    var didSelected: (() -> Void)? { get set }
-    var item: UITabBarItem { get set }
-    
-    func setSelected(_ isSelected: Bool, animated: Bool)
-}
-
-open class TabBarItemView: UIControl, TabBarItemViewInput {
+open class TabBarItemView: UIControl {
     
     // MARK: - Props
-    open var item: UITabBarItem = .init() {
+    open var item: TabBarItem = .init() {
         didSet {
             self.updateViews()
         }
@@ -40,7 +33,7 @@ open class TabBarItemView: UIControl, TabBarItemViewInput {
     }()
     
     // MARK: - Init
-    convenience init(item: UITabBarItem) {
+    convenience init(item: TabBarItem) {
         self.init(frame: .zero)
         
         self.item = item
@@ -79,16 +72,29 @@ open class TabBarItemView: UIControl, TabBarItemViewInput {
     }
     
     open func updateViews() {
+        self.item.didSetBadgeValue = { [weak self] badgeValue in
+            self?.updateBadgeValue(badgeValue)
+        }
+        
         self.control.imageView.image = self.item.image
         self.control.titleLabel.text = self.item.title
         
-        self.badgeView.isHidden = self.item.badgeValue == nil
-        self.badgeView.titleLabel.text = self.item.badgeValue
+        self.updateBadgeValue(self.item.badgeValue)
+    }
+    
+    open func updateBadgeValue(_ badgeValue: String?) {
+        self.badgeView.isHidden = badgeValue == nil
+        self.badgeView.titleLabel.text = badgeValue
     }
     
     open func setSelected(_ isSelected: Bool, animated: Bool) {
-        self.control.imageView.image = isSelected ? self.item.selectedImage : self.item.image
-        self.control.titleLabel.textColor = isSelected ? .blue : .black
+        if let selectedImage = self.item.selectedImage {
+            self.control.imageView.image = isSelected ? selectedImage : self.item.image
+        }
+         
+        let color: UIColor = isSelected ? .blue : .black
+        self.control.imageView.tintColor = color
+        self.control.titleLabel.textColor = color
     }
     
     @objc
@@ -117,6 +123,12 @@ extension TabBarItemView {
             return result
         }()
         
+        open var imageSize: CGSize = .init(width: 30, height: 30) {
+            didSet {
+                self.setupViews()
+            }
+        }
+        
         // MARK: - Init
         public override init(frame: CGRect) {
             super.init(frame: frame)
@@ -141,10 +153,9 @@ extension TabBarItemView {
             NSLayoutConstraint.activate([
                 self.imageView.topAnchor.constraint(equalTo: self.topAnchor),
                 self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                self.imageView.widthAnchor.constraint(equalToConstant: 24),
-                self.imageView.heightAnchor.constraint(equalToConstant: 24),
+                self.imageView.widthAnchor.constraint(equalToConstant: self.imageSize.width),
+                self.imageView.heightAnchor.constraint(equalToConstant: self.imageSize.height),
                 
-                self.titleLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 4),
                 self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                 self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
                 self.titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)

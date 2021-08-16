@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol MainViewControllerInput: ViewControllerInput { }
+protocol SettingViewControllerInput: ViewControllerInput { }
 
-class MainViewController: ViewController, MainViewControllerInput {
+class SettingViewController: ViewController, SettingViewControllerInput {
     
     // MARK: - Props
-    var model: MainViewModelInput? {
+    var model: SettingViewModelInput? {
         get {
-            self._model as? MainViewModelInput
+            self._model as? SettingViewModelInput
         }
         set {
             self._model = newValue
@@ -39,7 +39,7 @@ class MainViewController: ViewController, MainViewControllerInput {
     }
 
     // MARK: - Lifecycle
-    init(model: MainViewModel) {
+    init(model: SettingViewModel) {
         super.init(_model: model)
     }
     
@@ -78,10 +78,10 @@ class MainViewController: ViewController, MainViewControllerInput {
 }
 
 // MARK: - ViewModelOutput
-extension MainViewController: MainViewModelOutput { }
+extension SettingViewController: SettingViewModelOutput { }
 
 // MARK: - UITableViewDataSource
-extension MainViewController: UITableViewDataSource {
+extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.tableCellsModels.count

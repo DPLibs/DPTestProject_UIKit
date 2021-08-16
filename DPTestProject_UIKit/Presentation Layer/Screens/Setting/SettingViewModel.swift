@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  SettingViewModel.swift
 //  DPTestProject_UIKit
 //
 //  Created by Дмитрий Поляков on 23.07.2021.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol MainViewModelInput: ViewModelInput {
+protocol SettingViewModelInput: ViewModelInput {
     var title: String { get }
 }
 
-protocol MainViewModelOutput: ViewModelOutput { }
+protocol SettingViewModelOutput: ViewModelOutput { }
 
-class MainViewModel: ViewModel, MainViewModelInput {
+class SettingViewModel: ViewModel, SettingViewModelInput {
     
     // MARK: - Props
-    weak var output: MainViewModelOutput? {
+    weak var output: SettingViewModelOutput? {
         get {
-            self._output as? MainViewModelOutput
+            self._output as? SettingViewModelOutput
         }
         set {
             self._output = newValue
