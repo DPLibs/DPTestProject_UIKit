@@ -42,7 +42,6 @@ open class TabBarController: UITabBarController {
         
         self.viewControllers = tabBarView.itemsViews.map({ _ in
             let result = NewsListViewController(model: .init())
-//            result.tabBarItem = $0.item ?? .init()
             
             return result
         })
