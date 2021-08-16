@@ -13,25 +13,13 @@ open class TabBarView: UIView {
     // MARK: - Props
     open var didSetSelectedIndex: ((Int) -> Void)?
     
-    open var itemsViews: [ItemView] = [] {
+    open var items: [UITabBarItem] = [] {
         didSet {
-            self.didSetItemsViews()
+            self.updateViews()
         }
     }
     
-    func didSetItemsViews() {
-        self.stackContentView.subviews.forEach({ $0.removeFromSuperview() })
-        
-        self.itemsViews.forEach({ itemView in
-            itemView.didSetSelected = { [weak self] isSelected in
-                if isSelected {
-                    self?.didSetSelectedIndex?(itemView.item?.tag ?? 0)
-                }
-            }
-            
-            self.stackContentView.addArrangedSubview(itemView)
-        })
-    }
+    open private(set) var itemsViews: [TabBarItemViewInput] = []
     
     public lazy var contentView: UIView = {
         let result = UIView()
@@ -78,10 +66,10 @@ open class TabBarView: UIView {
     }
     
     open var contentInsets: NSDirectionalEdgeInsets = .init(
-        top: 0,
-        leading: 0,
+        top: 4,
+        leading: 8,
         bottom: -(UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0),
-        trailing: 0
+        trailing: -8
     ) {
         didSet {
             self.setContentView()
@@ -101,15 +89,17 @@ open class TabBarView: UIView {
         self.setupViews()
     }
     
-    convenience init(itemsViews: [ItemView]) {
+    convenience init(items: [UITabBarItem]) {
         self.init(frame: .zero)
         
-        self.itemsViews = itemsViews
-        self.didSetItemsViews()
+        self.items = items
+        self.updateViews()
     }
     
     // MARK: - Methods
     open func setupViews() {
+        self.backgroundColor = .lightGray
+        
         self.setSelf()
         self.setContentView()
         self.setStackContentView()
@@ -168,85 +158,25 @@ open class TabBarView: UIView {
         })
     }
     
+    open func updateViews() {
+        self.stackContentView.subviews.forEach({ $0.removeFromSuperview() })
+        
+        self.itemsViews = self.items.map({ TabBarItemView(item: $0) })
+        
+        self.itemsViews.forEach({ itemView in
+            itemView.didSelected = { [weak self] in
+                self?.didSetSelectedIndex?(itemView.item.tag)
+            }
+            
+            self.stackContentView.addArrangedSubview(itemView)
+        })
+    }
+    
     open func setSelectedIndex(_ selectedIndex: Int, animated: Bool) {
         self.itemsViews.forEach({ itemView in
-            itemView.setSelected(itemView.item?.tag == selectedIndex, animated: animated)
+            itemView.setSelected(itemView.item.tag == selectedIndex, animated: animated)
         })
     }
 }
 
-// MARK: - ItemView
-extension TabBarView {
-    
-    open class ItemView: UIView {
-        
-        // MARK: - Props
-        open var item: UITabBarItem? {
-            didSet {
-                self.didSetItem()
-            }
-        }
-        
-        open var didSetSelected: ((Bool) -> Void)?
-        
-        lazy var button: UIButton = {
-            let result = UIButton()
-            result.addTarget(self, action: #selector(self.tapButton(_:)), for: .touchUpInside)
-            
-            return result
-        }()
-        
-        // MARK: - Init
-        convenience init(item: UITabBarItem) {
-            self.init(frame: .zero)
-            
-            self.item = item
-            self.didSetItem()
-        }
-        
-        public override init(frame: CGRect) {
-            super.init(frame: frame)
-            
-            self.setupViews()
-        }
-        
-        public required init?(coder: NSCoder) {
-            super.init(coder: coder)
-            
-            self.setupViews()
-        }
-        
-        // MARK: - Methods
-        open func setupViews() {
-            self.button.removeFromSuperview()
-            self.button.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(self.button)
-            
-            NSLayoutConstraint.activate([
-                self.button.topAnchor.constraint(equalTo: self.topAnchor),
-                self.button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-                self.button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-            ])
-        }
-        
-        open func setSelected(_ isSelected: Bool, animated: Bool) {
-            print("!!!", self.item?.tag, isSelected)
-            self.backgroundColor = isSelected ? .blue : .clear
-            self.didSetSelected?(isSelected)
-        }
-        
-        @objc
-        open func tapButton(_ button: UIButton) {
-            guard button == self.button else { return }
-            
-            self.setSelected(true, animated: true)
-        }
-        
-        func didSetItem() {
-            self.button.setTitle(self.item?.title, for: .normal)
-        }
 
-    }
-    
-}

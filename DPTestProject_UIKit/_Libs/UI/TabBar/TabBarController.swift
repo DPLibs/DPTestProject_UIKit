@@ -24,31 +24,30 @@ open class TabBarController: UITabBarController {
         self.setupComponets()
     }
     
-    open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        super.tabBar(tabBar, didSelect: item)
-        
-        self.tabBarView?.setSelectedIndex(self.selectedIndex, animated: true)
+    open override var selectedIndex: Int {
+        didSet {
+            self.tabBarView?.setSelectedIndex(self.selectedIndex, animated: true)
+        }
     }
     
     open func setupComponets() {
         self.view.backgroundColor = .yellow
         
-        self.tabBarView = .init(itemsViews: [
-            .init(item: .init(title: "111", image: nil, tag: 0)),
-            .init(item: .init(title: "222", image: nil, tag: 1)),
-            .init(item: .init(title: "333", image: nil, tag: 2)),
-            .init(item: .init(title: "444", image: nil, tag: 3))
-        ])
+        let tabBarView = TabBarView(itemsViews: [
+            TabBarItemView(item: .init(title: "News", image: nil, tag: 0)),
+            TabBarItemView(item: .init(title: "222", image: nil, tag: 1)),
+            TabBarItemView(item: .init(title: "333", image: nil, tag: 2)),
+            TabBarItemView(item: .init(title: "444", image: nil, tag: 3))
+        ], selectedIndex: 0)
         
-        self.tabBarView?.backgroundColor = .gray
-        self.tabBarView?.contentView.backgroundColor = .darkGray
-        
-        self.viewControllers = self.tabBarView?.itemsViews.map({
-            let result = UIViewController()
-            result.tabBarItem = $0.item ?? .init()
+        self.viewControllers = tabBarView.itemsViews.map({ _ in
+            let result = NewsListViewController(model: .init())
+//            result.tabBarItem = $0.item ?? .init()
             
             return result
         })
+        
+        self.tabBarView = tabBarView
     }
     
     open func setTabBarView() {
@@ -62,8 +61,10 @@ open class TabBarController: UITabBarController {
             }
             
             self.tabBar.isHidden = true
+            self.additionalSafeAreaInsets.bottom = 48
         } else {
             self.tabBar.isHidden = false
+            self.additionalSafeAreaInsets.bottom = 0
         }
     }
 }
