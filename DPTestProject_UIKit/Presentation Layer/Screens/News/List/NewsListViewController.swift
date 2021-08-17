@@ -28,6 +28,7 @@ class NewsListViewController: ViewController, NewsListViewControllerInput {
         result.backgroundColor = AppTheme.current.mainBackgroundColor
         result.register(NewsListTabelCell.self, forCellReuseIdentifier: NewsListTabelCell.reuseIdentifier)
         result.dataSource = self
+        result.delegate = self
         
         return result
     }()
@@ -99,6 +100,15 @@ extension NewsListViewController: UITableViewDataSource {
         default:
             return .init()
         }
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension NewsListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self._router?.showNewsDetail(model: .init())
     }
     
 }

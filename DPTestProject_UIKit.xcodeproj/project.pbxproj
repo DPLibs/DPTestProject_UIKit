@@ -32,6 +32,9 @@
 		E2ABB25926A73EF400A1BEEB /* DPTestProject_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB25826A73EF400A1BEEB /* DPTestProject_UIKitTests.swift */; };
 		E2ABB26426A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */; };
 		E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */; };
+		E2CAD5CD26CBB22A00123E3C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5CC26CBB22A00123E3C /* NavigationController.swift */; };
+		E2CAD5D026CBB42700123E3C /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5CF26CBB42700123E3C /* NewsDetailViewController.swift */; };
+		E2CAD5D226CBB43800123E3C /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */; };
 		E2D7645326C5B2D30000F4B6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7645226C5B2D30000F4B6 /* TabBarView.swift */; };
 		E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTestProject_UIKitUITests.swift; sourceTree = "<group>"; };
 		E2ABB26526A73EF400A1BEEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2CAD5CC26CBB22A00123E3C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E2CAD5CF26CBB42700123E3C /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
 		E2D7645226C5B2D30000F4B6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		E2FDE65A26ADD60600E8F12F /* ChangeAppThemeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppThemeTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +147,7 @@
 		E21CFABE26CAD5B000793FA1 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				E2CAD5CE26CBB41C00123E3C /* Detail */,
 				E21CFABF26CAD5B500793FA1 /* List */,
 			);
 			path = News;
@@ -215,6 +222,7 @@
 				E249F24626A7512B00817CBA /* ViewController.swift */,
 				E249F24826A7516F00817CBA /* ViewModel.swift */,
 				E2514F4C26AA17B100952E27 /* ViewRouter.swift */,
+				E2CAD5CB26CBB21600123E3C /* Navigation */,
 				E2D7645126C5B2BE0000F4B6 /* TabBar */,
 			);
 			path = UI;
@@ -353,6 +361,23 @@
 				E221846526A743D8009BEFFC /* Info.plist */,
 			);
 			path = "Support Layer";
+			sourceTree = "<group>";
+		};
+		E2CAD5CB26CBB21600123E3C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E2CAD5CC26CBB22A00123E3C /* NavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E2CAD5CE26CBB41C00123E3C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E2CAD5CF26CBB42700123E3C /* NewsDetailViewController.swift */,
+				E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		E2D7645126C5B2BE0000F4B6 /* TabBar */ = {
@@ -566,15 +591,18 @@
 				E249F24726A7512B00817CBA /* ViewController.swift in Sources */,
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
 				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
+				E2CAD5D026CBB42700123E3C /* NewsDetailViewController.swift in Sources */,
 				E21CFAC626CAD72700793FA1 /* NewsListTabelCell.swift in Sources */,
 				E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */,
 				E249F24926A7516F00817CBA /* ViewModel.swift in Sources */,
+				E2CAD5CD26CBB22A00123E3C /* NavigationController.swift in Sources */,
 				E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
 				E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */,
 				E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */,
 				E21CFAC126CAD64300793FA1 /* NewsListViewController.swift in Sources */,
 				E27C01AD26CB2819000E2303 /* TabBarItem.swift in Sources */,
+				E2CAD5D226CBB43800123E3C /* NewsDetailViewModel.swift in Sources */,
 				E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */,
 				E2514F5226AA192E00952E27 /* SettingViewModel.swift in Sources */,
 			);

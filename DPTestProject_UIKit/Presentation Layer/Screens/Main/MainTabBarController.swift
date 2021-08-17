@@ -34,7 +34,7 @@ class MainTabBarController: TabBarController, MainTabBarControllerInput {
                 rootViewController = .init()
             }
             
-            return UINavigationController(rootViewController: rootViewController)
+            return NavigationController(rootViewController: rootViewController)
         })
         
         self.tabBarView = .init(items: self.items)

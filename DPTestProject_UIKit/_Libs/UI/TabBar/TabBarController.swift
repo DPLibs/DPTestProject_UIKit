@@ -11,6 +11,8 @@ import UIKit
 public protocol TabBarControllerInput: AnyObject {
     var selectedIndex: Int { get set }
     var selectedItem: TabBarItem? { get set }
+    
+    func setTabBarViewHidden(_ isHidden: Bool, animated: Bool)
 }
  
 open class TabBarController: UITabBarController, TabBarControllerInput {
@@ -49,6 +51,18 @@ open class TabBarController: UITabBarController, TabBarControllerInput {
         }
     }
     
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.setTabBarView()
+    }
+    
+    open var hideTabBarView: Bool = false {
+        didSet {
+            self.tabBarView?.isHidden = self.hideTabBarView
+        }
+    }
+    
     open func setupComponets() { }
     
     open func setTabBarView() {
@@ -66,5 +80,10 @@ open class TabBarController: UITabBarController, TabBarControllerInput {
             self.tabBar.isHidden = false
             self.additionalSafeAreaInsets.bottom = .zero
         }
+    }
+    
+    open func setTabBarViewHidden(_ isHidden: Bool, animated: Bool) {
+        self.tabBarView?.isHidden = isHidden
+        self.additionalSafeAreaInsets.bottom =  isHidden ? .zero : (self.tabBarView?.additionalSafeAreaInsetsBottom ?? .zero)
     }
 }
