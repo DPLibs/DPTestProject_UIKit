@@ -22,7 +22,7 @@ open class TabBarController: UITabBarController, TabBarControllerInput {
     
     open var tabBarView: TabBarView? {
         didSet {
-            oldValue?.removeFromSuperview()
+            oldValue?.removeFromTabBarController()
             self.setTabBarView()
         }
     }
@@ -66,24 +66,17 @@ open class TabBarController: UITabBarController, TabBarControllerInput {
     open func setupComponets() { }
     
     open func setTabBarView() {
-        if let tabBarView = self.tabBarView {
-            tabBarView.addToTabBarController(self)
-            tabBarView.setSelectedIndex(self.selectedIndex, animated: false)
-            
-            tabBarView.didSelectIndex = { [weak self] selectedIndex in
-                self?.selectedIndex = selectedIndex
-            }
-            
-            self.tabBar.isHidden = true
-            self.additionalSafeAreaInsets.bottom = tabBarView.additionalSafeAreaInsetsBottom
-        } else {
-            self.tabBar.isHidden = false
-            self.additionalSafeAreaInsets.bottom = .zero
+        guard let tabBarView = self.tabBarView else { return }
+        
+        tabBarView.addToTabBarController(self)
+        tabBarView.setSelectedIndex(self.selectedIndex, animated: false)
+        
+        tabBarView.didSelectIndex = { [weak self] selectedIndex in
+            self?.selectedIndex = selectedIndex
         }
     }
     
     open func setTabBarViewHidden(_ isHidden: Bool, animated: Bool) {
-        self.tabBarView?.isHidden = isHidden
-        self.additionalSafeAreaInsets.bottom =  isHidden ? .zero : (self.tabBarView?.additionalSafeAreaInsetsBottom ?? .zero)
+        self.tabBarView?.setHidden(isHidden, animated: animated)
     }
 }

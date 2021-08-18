@@ -55,6 +55,20 @@ class NewsListViewController: ViewController, NewsListViewControllerInput {
     }
     
     // MARK: - Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.dpNavigationController?.navigationBarView = .init(leftView: .init(handler: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.dpNavigationController?.navigationBarView = nil
+    }
+    
     override func setupComponets() {
         self.navigationItem.title = "News List"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
@@ -108,7 +122,12 @@ extension NewsListViewController: UITableViewDataSource {
 extension NewsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self._router?.showNewsDetail(model: .init())
+        switch indexPath.row {
+        case 1:
+            self._router?.showNewsDetail(model: .init())
+        default:
+            self._router?.push(viewController: NewsListViewController(model: .init()), animated: true)
+        }
     }
     
 }

@@ -85,10 +85,6 @@ open class TabBarView: UIView {
     }
     
     // MARK: - Methods
-    open var additionalSafeAreaInsetsBottom: CGFloat {
-        self.stackHeightConstant
-    }
-    
     open func setupViews() {
         self.backgroundColor = .lightGray
         
@@ -126,6 +122,19 @@ open class TabBarView: UIView {
     
     open func addToTabBarController(_ tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.additionalSafeAreaInsets.bottom = self.stackHeightConstant
+    }
+    
+    open func removeFromTabBarController() {
+        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.additionalSafeAreaInsets.bottom = .zero
+        self.tabBarController = nil
+    }
+    
+    open func setHidden(_ isHidden: Bool, animated: Bool) {
+        self.isHidden = isHidden
+        self.tabBarController?.additionalSafeAreaInsets.bottom =  isHidden ? .zero : self.stackHeightConstant
     }
     
     open func setItemsViews(from items: [TabBarItem]) {

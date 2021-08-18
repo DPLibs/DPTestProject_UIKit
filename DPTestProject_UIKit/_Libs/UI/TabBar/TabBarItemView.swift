@@ -202,8 +202,6 @@ extension TabBarItemView {
         
         // MARK: - Methods
         open func setupViews() {
-            self.backgroundColor = .red
-            
             self.titleLabel.removeFromSuperview()
             self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(self.titleLabel)
