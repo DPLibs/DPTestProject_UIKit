@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol NewsListViewControllerInput: ViewControllerInput { }
+protocol NewsListViewControllerInput: DPViewControllerInput { }
 
-class NewsListViewController: ViewController, NewsListViewControllerInput {
+class NewsListViewController: DPViewController, NewsListViewControllerInput {
     
     // MARK: - Props
     var model: NewsListViewModelInput? {
@@ -72,7 +72,6 @@ class NewsListViewController: ViewController, NewsListViewControllerInput {
     override func setupComponets() {
         self.navigationItem.title = "News List"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
-        self.subscribeToNotifications([AppTheme.didSetCurrentNotification])
     }
     
     override func setupStyles() {
@@ -80,19 +79,12 @@ class NewsListViewController: ViewController, NewsListViewControllerInput {
     }
     
     override func setupModel() {
-        super.setupModel()
+        self.model?.didGetList = { [weak self] lists in
+            self?.tableCellsModels = lists.map({ NewsListTabelCell.Model(title: $0) })
+        }
         
         self.model?.getList()
     }
-}
-
-// MARK: - ViewModelOutput
-extension NewsListViewController: NewsListViewModelOutput {
-    
-    func provideGetList(_ model: NewsListViewModelInput, lists: [String]) {
-        self.tableCellsModels = lists.map({ NewsListTabelCell.Model(title: $0) })
-    }
-    
 }
 
 // MARK: - UITableViewDataSource

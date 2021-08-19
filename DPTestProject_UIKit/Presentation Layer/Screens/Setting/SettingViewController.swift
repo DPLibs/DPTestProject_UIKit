@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol SettingViewControllerInput: ViewControllerInput { }
+protocol SettingViewControllerInput: DPViewControllerInput { }
 
-class SettingViewController: ViewController, SettingViewControllerInput {
+class SettingViewController: DPViewController, SettingViewControllerInput {
     
     // MARK: - Props
     var model: SettingViewModelInput? {
@@ -25,7 +25,7 @@ class SettingViewController: ViewController, SettingViewControllerInput {
     
     lazy var tableView: UITableView = {
         let result = UITableView()
-        result.backgroundColor = AppTheme.current.mainBackgroundColor
+        result.backgroundColor = .clear
         result.register(ChangeAppThemeTableCell.self, forCellReuseIdentifier: ChangeAppThemeTableCell.reuseIdentifier)
         result.dataSource = self
         
@@ -57,28 +57,19 @@ class SettingViewController: ViewController, SettingViewControllerInput {
     override func setupComponets() {
         self.navigationItem.title = "Settings"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
-        self.subscribeToNotifications([AppTheme.didSetCurrentNotification])
+        
+        self.notificationObserver.observe([AppTheme.didSetCurrentNotification]) { [weak self] notification in
+            guard notification.name == AppTheme.didSetCurrentNotification else { return }
+                    
+            self?.setupComponets()
+            self?.setupStyles()
+        }
     }
     
     override func setupStyles() {
         self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
-    
-    override func provideNotification(_ notification: Notification) {
-        switch notification.name {
-        
-        case AppTheme.didSetCurrentNotification:
-            self.setupComponets()
-            self.setupStyles()
-            
-        default:
-            break
-        }
-    }
 }
-
-// MARK: - ViewModelOutput
-extension SettingViewController: SettingViewModelOutput { }
 
 // MARK: - UITableViewDataSource
 extension SettingViewController: UITableViewDataSource {

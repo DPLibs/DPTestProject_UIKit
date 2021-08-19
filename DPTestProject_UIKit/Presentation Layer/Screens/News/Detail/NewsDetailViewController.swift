@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol NewsDetailViewControllerInput: ViewControllerInput { }
+protocol NewsDetailViewControllerInput: DPViewControllerInput { }
 
-class NewsDetailViewController: ViewController, NewsDetailViewControllerInput {
+class NewsDetailViewController: DPViewController, NewsDetailViewControllerInput {
     
     // MARK: - Props
     var model: NewsDetailViewModelInput? {
@@ -41,6 +41,3 @@ class NewsDetailViewController: ViewController, NewsDetailViewControllerInput {
         self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
 }
-
-// MARK: - ViewModelOutput
-extension NewsDetailViewController: NewsDetailViewModelOutput {}

@@ -7,23 +7,12 @@
 
 import Foundation
 
-protocol InitalViewModelInput: ViewModelInput {
+protocol InitalViewModelInput: DPViewModelInput {
     var title: String { get }
 }
 
-protocol InitalViewModelOutput: ViewModelOutput {}
-
-class InitalViewModel: ViewModel, InitalViewModelInput {
+class InitalViewModel: DPViewModel, InitalViewModelInput {
     
     // MARK: - Props
-    weak var output: InitalViewModelOutput? {
-        get {
-            self._output as? InitalViewModelOutput
-        }
-        set {
-            self._output = newValue
-        }
-    }
-    
     let title = "DPTestProject_UIKit"
 }

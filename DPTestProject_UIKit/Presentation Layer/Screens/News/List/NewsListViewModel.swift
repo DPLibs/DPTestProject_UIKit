@@ -7,25 +7,16 @@
 
 import Foundation
 
-protocol NewsListViewModelInput: ViewModelInput {
+protocol NewsListViewModelInput: DPViewModelInput {
+    var didGetList: (([String]) -> Void)? { get set }
+    
     func getList()
 }
 
-protocol NewsListViewModelOutput: ViewModelOutput {
-    func provideGetList(_ model: NewsListViewModelInput, lists: [String])
-}
-
-class NewsListViewModel: ViewModel, NewsListViewModelInput {
+class NewsListViewModel: DPViewModel, NewsListViewModelInput {
     
     // MARK: - Props
-    weak var output: NewsListViewModelOutput? {
-        get {
-            self._output as? NewsListViewModelOutput
-        }
-        set {
-            self._output = newValue
-        }
-    }
+    var didGetList: (([String]) -> Void)?
     
     // MARK: - Methods
     func getList() {
@@ -39,6 +30,6 @@ class NewsListViewModel: ViewModel, NewsListViewModelInput {
             return result
         }
         
-        self.output?.provideGetList(self, lists: lists)
+        self.didGetList?(lists)
     }
 }

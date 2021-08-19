@@ -7,21 +7,6 @@
 
 import Foundation
 
-protocol NewsDetailViewModelInput: ViewModelInput {}
+protocol NewsDetailViewModelInput: DPViewModelInput {}
 
-protocol NewsDetailViewModelOutput: ViewModelOutput {}
-
-class NewsDetailViewModel: ViewModel, NewsDetailViewModelInput {
-    
-    // MARK: - Props
-    weak var output: NewsDetailViewModelOutput? {
-        get {
-            self._output as? NewsDetailViewModelOutput
-        }
-        set {
-            self._output = newValue
-        }
-    }
-    
-    // MARK: - Methods
-}
+class NewsDetailViewModel: DPViewModel, NewsDetailViewModelInput { }

@@ -7,24 +7,13 @@
 
 import Foundation
 
-protocol SettingViewModelInput: ViewModelInput {
+protocol SettingViewModelInput: DPViewModelInput {
     var title: String { get }
 }
 
-protocol SettingViewModelOutput: ViewModelOutput { }
-
-class SettingViewModel: ViewModel, SettingViewModelInput {
+class SettingViewModel: DPViewModel, SettingViewModelInput {
     
     // MARK: - Props
-    weak var output: SettingViewModelOutput? {
-        get {
-            self._output as? SettingViewModelOutput
-        }
-        set {
-            self._output = newValue
-        }
-    }
-    
     let title = "titleMain"
     
     // MARK: - Methods

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension ViewRouter {
+extension DPViewRouter {
     
     @discardableResult
     func showMain() -> MainTabBarControllerInput {

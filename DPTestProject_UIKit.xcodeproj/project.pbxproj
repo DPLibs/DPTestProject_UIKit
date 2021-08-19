@@ -18,9 +18,9 @@
 		E22ADF9826C3DF2D00121DEE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9726C3DF2D00121DEE /* TabBarController.swift */; };
 		E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F23B26A74A1000817CBA /* InitalViewController.swift */; };
 		E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24326A74BE500817CBA /* InitalViewModel.swift */; };
-		E249F24726A7512B00817CBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24626A7512B00817CBA /* ViewController.swift */; };
-		E249F24926A7516F00817CBA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24826A7516F00817CBA /* ViewModel.swift */; };
-		E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4C26AA17B100952E27 /* ViewRouter.swift */; };
+		E249F24726A7512B00817CBA /* DPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24626A7512B00817CBA /* DPViewController.swift */; };
+		E249F24926A7516F00817CBA /* DPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24826A7516F00817CBA /* DPViewModel.swift */; };
+		E2514F4D26AA17B100952E27 /* DPViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4C26AA17B100952E27 /* DPViewRouter.swift */; };
 		E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F4F26AA192200952E27 /* SettingViewController.swift */; };
 		E2514F5226AA192E00952E27 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2514F5126AA192E00952E27 /* SettingViewModel.swift */; };
 		E27C01AD26CB2819000E2303 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C01AC26CB2819000E2303 /* TabBarItem.swift */; };
@@ -32,6 +32,8 @@
 		E2ABB25926A73EF400A1BEEB /* DPTestProject_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB25826A73EF400A1BEEB /* DPTestProject_UIKitTests.swift */; };
 		E2ABB26426A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */; };
 		E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */; };
+		E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA558E26CE58FB0018F7F3 /* DPView.swift */; };
+		E2CA559226CE5B710018F7F3 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA559126CE5B710018F7F3 /* NotificationObserver.swift */; };
 		E2CAD5CD26CBB22A00123E3C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5CC26CBB22A00123E3C /* NavigationController.swift */; };
 		E2CAD5D026CBB42700123E3C /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5CF26CBB42700123E3C /* NewsDetailViewController.swift */; };
 		E2CAD5D226CBB43800123E3C /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */; };
@@ -75,9 +77,9 @@
 		E22ADF9726C3DF2D00121DEE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E249F23B26A74A1000817CBA /* InitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
 		E249F24326A74BE500817CBA /* InitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewModel.swift; sourceTree = "<group>"; };
-		E249F24626A7512B00817CBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E249F24826A7516F00817CBA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		E2514F4C26AA17B100952E27 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		E249F24626A7512B00817CBA /* DPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPViewController.swift; sourceTree = "<group>"; };
+		E249F24826A7516F00817CBA /* DPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPViewModel.swift; sourceTree = "<group>"; };
+		E2514F4C26AA17B100952E27 /* DPViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPViewRouter.swift; sourceTree = "<group>"; };
 		E2514F4F26AA192200952E27 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E2514F5126AA192E00952E27 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		E27C01AC26CB2819000E2303 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -94,6 +96,8 @@
 		E2ABB26326A73EF400A1BEEB /* DPTestProject_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTestProject_UIKitUITests.swift; sourceTree = "<group>"; };
 		E2ABB26526A73EF400A1BEEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2ABB27726A740BA00A1BEEB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2CA558E26CE58FB0018F7F3 /* DPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPView.swift; sourceTree = "<group>"; };
+		E2CA559126CE5B710018F7F3 /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 		E2CAD5CC26CBB22A00123E3C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E2CAD5CF26CBB42700123E3C /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */,
+				E2CA559126CE5B710018F7F3 /* NotificationObserver.swift */,
 				E249F24526A7511F00817CBA /* UI */,
 			);
 			path = _Libs;
@@ -219,9 +224,8 @@
 		E249F24526A7511F00817CBA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E249F24626A7512B00817CBA /* ViewController.swift */,
-				E249F24826A7516F00817CBA /* ViewModel.swift */,
-				E2514F4C26AA17B100952E27 /* ViewRouter.swift */,
+				E2CA558E26CE58FB0018F7F3 /* DPView.swift */,
+				E2CA559026CE5B2E0018F7F3 /* MVCR */,
 				E2CAD5CB26CBB21600123E3C /* Navigation */,
 				E2D7645126C5B2BE0000F4B6 /* TabBar */,
 			);
@@ -361,6 +365,16 @@
 				E221846526A743D8009BEFFC /* Info.plist */,
 			);
 			path = "Support Layer";
+			sourceTree = "<group>";
+		};
+		E2CA559026CE5B2E0018F7F3 /* MVCR */ = {
+			isa = PBXGroup;
+			children = (
+				E249F24626A7512B00817CBA /* DPViewController.swift */,
+				E249F24826A7516F00817CBA /* DPViewModel.swift */,
+				E2514F4C26AA17B100952E27 /* DPViewRouter.swift */,
+			);
+			path = MVCR;
 			sourceTree = "<group>";
 		};
 		E2CAD5CB26CBB21600123E3C /* Navigation */ = {
@@ -581,23 +595,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D7645326C5B2D30000F4B6 /* TabBarView.swift in Sources */,
-				E2514F4D26AA17B100952E27 /* ViewRouter.swift in Sources */,
+				E2514F4D26AA17B100952E27 /* DPViewRouter.swift in Sources */,
 				E27C01B026CB2A99000E2303 /* MainTabBarController.swift in Sources */,
 				E22ADF9826C3DF2D00121DEE /* TabBarController.swift in Sources */,
 				E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */,
 				E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */,
 				E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */,
 				E21CFAC326CAD6A100793FA1 /* NewsListViewModel.swift in Sources */,
-				E249F24726A7512B00817CBA /* ViewController.swift in Sources */,
+				E249F24726A7512B00817CBA /* DPViewController.swift in Sources */,
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
 				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
 				E2CAD5D026CBB42700123E3C /* NewsDetailViewController.swift in Sources */,
 				E21CFAC626CAD72700793FA1 /* NewsListTabelCell.swift in Sources */,
 				E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */,
-				E249F24926A7516F00817CBA /* ViewModel.swift in Sources */,
+				E249F24926A7516F00817CBA /* DPViewModel.swift in Sources */,
 				E2CAD5CD26CBB22A00123E3C /* NavigationController.swift in Sources */,
 				E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
+				E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */,
 				E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */,
 				E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */,
 				E21CFAC126CAD64300793FA1 /* NewsListViewController.swift in Sources */,
@@ -605,6 +620,7 @@
 				E2CAD5D226CBB43800123E3C /* NewsDetailViewModel.swift in Sources */,
 				E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */,
 				E2514F5226AA192E00952E27 /* SettingViewModel.swift in Sources */,
+				E2CA559226CE5B710018F7F3 /* NotificationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

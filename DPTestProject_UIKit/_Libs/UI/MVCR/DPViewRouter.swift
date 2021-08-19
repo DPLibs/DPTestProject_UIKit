@@ -1,17 +1,15 @@
-//
-//  ViewRouter.swift
-//  DPTestProject_UIKit
-//
-//  Created by Дмитрий Поляков on 23.07.2021.
-//
-
 import Foundation
 import UIKit
 
-open class ViewRouter {
+open class DPViewRouter {
     
-    weak var _viewController: UIViewController?
+    // MARK: - Props
+    open weak var _viewController: UIViewController?
     
+    // MARK: - Init
+    public init() {}
+    
+    // MARK: - Methods
     open func setupRootController(_ viewController: UIViewController) {
         let window = self._viewController?.view.window
         window?.rootViewController = viewController

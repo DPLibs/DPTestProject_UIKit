@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 // MARK: - ViewControllerInput
-protocol InitalViewControllerInput: ViewControllerInput { }
+protocol InitalViewControllerInput: DPViewControllerInput { }
 
-class InitalViewController: ViewController, InitalViewControllerInput {
+class InitalViewController: DPViewController, InitalViewControllerInput {
     
     // MARK: - Props
     var model: InitalViewModelInput? {
@@ -71,6 +71,3 @@ class InitalViewController: ViewController, InitalViewControllerInput {
         self.titleLabel.text = self.model?.title
     }
 }
-
-// MARK: - ViewModelOutput
-extension InitalViewController: InitalViewModelOutput { }
