@@ -58,12 +58,12 @@ class SettingViewController: DPViewController, SettingViewControllerInput {
         self.navigationItem.title = "Settings"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
         
-        self.notificationObserver.observe([AppTheme.didSetCurrentNotification]) { [weak self] notification in
-            guard notification.name == AppTheme.didSetCurrentNotification else { return }
-                    
-            self?.setupComponets()
-            self?.setupStyles()
-        }
+        self.notificationObserver.observe(
+            .notification(AppTheme.didSetCurrentNotification, handler: { [weak self] _ in
+                self?.setupComponets()
+                self?.setupStyles()
+            })
+        )
     }
     
     override func setupStyles() {

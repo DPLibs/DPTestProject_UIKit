@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import Combine
 
 open class NotificationObserver: NSObject {
     
-    // MARK: - Props
-    open private(set) var observeHandler: ((Notification) -> Void)?
+    // MARK: - Static
+    public struct Observer {
+        public let notificationName: Notification.Name
+        public var handler: (Notification) -> Void
+        
+        public static func notification(_ name: Notification.Name, handler: @escaping (Notification) -> Void) -> Self {
+            .init(notificationName: name, handler: handler)
+        }
+    }
     
+    // MARK: - Props
     public let notificationCenter: NotificationCenter
+    public private(set) var publisherSinks: [AnyCancellable] = []
     
     // MARK: - Init
     deinit {
-        NotificationCenter.default.removeObserver(self)
         self.notificationCenter.removeObserver(self)
+        self.publisherSinks.forEach({ $0.cancel() })
     }
     
     public override init() {
@@ -26,17 +36,14 @@ open class NotificationObserver: NSObject {
         super.init()
     }
     
-    open func observe(_ notifications: [Notification.Name], handler: ((Notification) -> Void)?) {
-        self.observeHandler = handler
-        
-        notifications.forEach({
-            self.notificationCenter.addObserver(self, selector: #selector(self.provideNotification(_:)), name: $0, object: nil)
+    open func observe(_ observers: Observer...) {
+        observers.forEach({ observer in
+            let publisher = self.notificationCenter
+                .publisher(for: observer.notificationName)
+                .sink(receiveValue: observer.handler)
+
+            self.publisherSinks += [publisher]
         })
-    }
-    
-    @objc
-    open func provideNotification(_ notification: Notification) {
-        self.observeHandler?(notification)
     }
     
 }
