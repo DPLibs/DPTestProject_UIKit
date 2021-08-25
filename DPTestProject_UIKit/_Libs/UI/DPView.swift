@@ -16,15 +16,21 @@ open class DPView: UIView {
         self.setupViews()
     }
     
+    // MARK: - Methods
     open override func awakeFromNib() {
         super.awakeFromNib()
         
         self.setupViews()
     }
     
-    // MARK: - Methods
     open func setupViews() {}
     
     open func updateViews() {}
+    
+    @objc
+    open func tapButtonAction(_ button: UIButton) { }
+
+    @objc
+    open func tapGestureAction(_ gesture: UITapGestureRecognizer) { }
     
 }

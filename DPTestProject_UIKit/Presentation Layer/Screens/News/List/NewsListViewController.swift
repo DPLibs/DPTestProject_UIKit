@@ -23,21 +23,15 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
         }
     }
     
-    lazy var tableView: UITableView = {
-        let result = UITableView()
+    lazy var tableView: DPTableView = {
+        let result = DPTableView()
         result.backgroundColor = AppTheme.current.mainBackgroundColor
-        result.register(NewsListTabelCell.self, forCellReuseIdentifier: NewsListTabelCell.reuseIdentifier)
-        result.dataSource = self
-        result.delegate = self
+        result.register(NewsListTabelCell.self, forCellReuseIdentifier: "NewsListTabelCell")
+        result.refreshControl = .init()
+        result.adapter = .init()
         
         return result
     }()
-    
-    var tableCellsModels: [Any] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
 
     // MARK: - Lifecycle
     init(model: NewsListViewModel) {
@@ -57,7 +51,6 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "News List"
-        self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
     }
     
     override func setupStyles() {
@@ -66,46 +59,11 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     
     override func setupModel() {
         self.model?.didGetList = { [weak self] lists in
-            self?.tableCellsModels = lists.map({ NewsListTabelCell.Model(title: $0) })
+            let rows = lists.map({ NewsListTabelCell.Model(title: $0, didTap: nil) })
+
+            self?.tableView.adapter?.reload([.init(rows: rows)])
         }
         
         self.model?.getList()
     }
-}
-
-// MARK: - UITableViewDataSource
-extension NewsListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableCellsModels.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard self.tableCellsModels.indices.contains(indexPath.row) else { return .init() }
-        
-        switch self.tableCellsModels[indexPath.row] {
-        case let model as NewsListTabelCell.Model:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTabelCell.reuseIdentifier, for: indexPath) as? NewsListTabelCell else { return .init() }
-            cell.model = model
-            
-            return cell
-        default:
-            return .init()
-        }
-    }
-    
-}
-
-// MARK: - UITableViewDelegate
-extension NewsListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 1:
-            self._router?.showNewsDetail(model: .init())
-        default:
-            self._router?.push(viewController: NewsListViewController(model: .init()), animated: true)
-        }
-    }
-    
 }

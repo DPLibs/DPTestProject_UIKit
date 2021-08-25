@@ -8,53 +8,38 @@
 import Foundation
 import UIKit
 
-class NewsListTabelCell: UITableViewCell {
+class NewsListTabelCell: DPTableCell {
     
-    class Model {
+    class Model: DPTableCell.ViewModel {
+        
+        override var cellIdentifier: String? {
+            "NewsListTabelCell"
+        }
+        
         let title: String
         
-        init(title: String) {
+        init(title: String, didTap: (() -> Void)?) {
             self.title = title
+            
+            super.init(didTap: didTap)
         }
+        
     }
-    
-    static let reuseIdentifier: String = "NewsListTabelCell"
     
     var model: Model? {
-        didSet {
-            self.updateViews()
+        get {
+            self.viewModel as? Model
+        }
+        set {
+            self.viewModel = newValue
         }
     }
     
-    override var reuseIdentifier: String? {
-        NewsListTabelCell.reuseIdentifier
-    }
+    lazy var titleLabel: UILabel = .init()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override func setupViews() {
+        super.setupViews()
         
-        self.setupViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        self.setupViews()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.setupViews()
-    }
-    
-    lazy var titleLabel: UILabel = {
-        let result = UILabel()
-        
-        return result
-    }()
-    
-    func setupViews() {
         self.contentView.backgroundColor = AppTheme.current.mainBackgroundColor
         
         self.titleLabel.removeFromSuperview()
@@ -69,7 +54,7 @@ class NewsListTabelCell: UITableViewCell {
         ])
     }
     
-    func updateViews() {
+    override func updateViews() {
         guard let model = self.model else { return }
         
         self.titleLabel.text = model.title
