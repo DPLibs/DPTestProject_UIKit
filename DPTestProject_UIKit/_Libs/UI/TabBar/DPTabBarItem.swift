@@ -1,14 +1,7 @@
-//
-//  TabBarItem.swift
-//  DPTestProject_UIKit
-//
-//  Created by Дмитрий Поляков on 17.08.2021.
-//
-
 import Foundation
 import UIKit
 
-open class TabBarItem: UITabBarItem {
+open class DPTabBarItem: UITabBarItem {
     
     // MARK: - Props
     open override var title: String? {
