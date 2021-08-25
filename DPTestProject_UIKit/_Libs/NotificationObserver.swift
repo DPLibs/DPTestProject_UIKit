@@ -1,10 +1,3 @@
-//
-//  NotificationObserver.swift
-//  DPTestProject_UIKit
-//
-//  Created by Дмитрий Поляков on 19.08.2021.
-//
-
 import Foundation
 import Combine
 

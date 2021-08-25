@@ -55,20 +55,6 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     }
     
     // MARK: - Methods
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.dpNavigationController?.navigationBarView = .init(leftView: .init(handler: { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        }))
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.dpNavigationController?.navigationBarView = nil
-    }
-    
     override func setupComponets() {
         self.navigationItem.title = "News List"
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]

@@ -1,15 +1,15 @@
 import Foundation
 import UIKit
 
-public protocol TabBarControllerInput: AnyObject {
+public protocol DPTabBarControllerInput: AnyObject {
     var selectedIndex: Int { get set }
-    var selectedItem: TabBarItem? { get set }
+    var selectedItem: DPTabBarItem? { get set }
 }
  
-open class DPTabBarController: UITabBarController, TabBarControllerInput {
+open class DPTabBarController: UITabBarController, DPTabBarControllerInput {
     
     // MARK: - Props
-    open var items: [TabBarItem] = []
+    open var items: [DPTabBarItem] = []
     
     // MARK: - Methods
     open override func viewDidLoad() {
@@ -18,7 +18,7 @@ open class DPTabBarController: UITabBarController, TabBarControllerInput {
         self.setupComponets()
     }
     
-    open var selectedItem: TabBarItem? {
+    open var selectedItem: DPTabBarItem? {
         get {
             self.items.first(where: { $0.tag == self.selectedIndex })
         }

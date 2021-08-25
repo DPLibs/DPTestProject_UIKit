@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+protocol MainNavigationControllerInput: DPNavigationControllerInput {}
+
+class MainNavigationController: DPNavigationController {}
+
+extension UIViewController {
+    
+    var mainNavigationControllerInput: DPNavigationControllerInput? {
+        self.navigationController as? DPNavigationControllerInput
+    }
+    
+}

@@ -16,6 +16,12 @@ open class DPView: UIView {
         self.setupViews()
     }
     
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.setupViews()
+    }
+    
     // MARK: - Methods
     open func setupViews() {}
     

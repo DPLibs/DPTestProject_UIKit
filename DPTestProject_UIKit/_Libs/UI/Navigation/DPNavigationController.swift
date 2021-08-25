@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 
-public protocol NavigationControllerInput: AnyObject {}
+public protocol DPNavigationControllerInput: AnyObject {}
 
-open class DPNavigationController: UINavigationController, NavigationControllerInput {
+open class DPNavigationController: UINavigationController, DPNavigationControllerInput {
     
     open override func viewDidLoad() {
         super.viewDidLoad()

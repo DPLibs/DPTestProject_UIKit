@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public protocol DPViewControllerInput: AnyObject { }
+public protocol DPViewControllerInput: AnyObject {}
 
 open class DPViewController: UIViewController, DPViewControllerInput {
     

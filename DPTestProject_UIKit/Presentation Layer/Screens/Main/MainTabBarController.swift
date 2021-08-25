@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-extension TabBarItem {
-    static let news: TabBarItem = .init(title: "News", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 0)
-    static let test1: TabBarItem = .init(title: "test1", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 1)
-    static let test2: TabBarItem = .init(title: "test2", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 2)
-    static let settings: TabBarItem = .init(title: "Settings", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 3)
+extension DPTabBarItem {
+    static let news: DPTabBarItem = .init(title: "News", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 0)
+    static let test1: DPTabBarItem = .init(title: "test1", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 1)
+    static let test2: DPTabBarItem = .init(title: "test2", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 2)
+    static let settings: DPTabBarItem = .init(title: "Settings", image: #imageLiteral(resourceName: "ic_24").withRenderingMode(.alwaysTemplate), tag: 3)
 }
 
-protocol MainTabBarControllerInput: TabBarControllerInput {}
+protocol MainTabBarControllerInput: DPTabBarControllerInput {}
 
-class MainTabBarController: TabBarController, MainTabBarControllerInput {
+class MainTabBarController: DPTabBarController, MainTabBarControllerInput {
     
     override func setupComponets() {
         self.items = [.news, .test1, .test2, .settings]
@@ -34,10 +34,16 @@ class MainTabBarController: TabBarController, MainTabBarControllerInput {
                 rootViewController = .init()
             }
             
-            return NavigationController(rootViewController: rootViewController)
+            return DPNavigationController(rootViewController: rootViewController)
         })
-        
-        self.tabBarView = .init(items: self.items)
+    }
+    
+}
+
+extension UIViewController {
+    
+    var mainTabBarControllerInput: MainTabBarControllerInput? {
+        self.tabBarController as? MainTabBarControllerInput
     }
     
 }
