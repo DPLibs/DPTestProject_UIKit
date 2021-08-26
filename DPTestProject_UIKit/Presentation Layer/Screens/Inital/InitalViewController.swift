@@ -51,6 +51,8 @@ class InitalViewController: DPViewController, InitalViewControllerInput {
     
     // MARK: - Methods
     override func setupComponets() {
+        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
+        
         self.titleLabel.removeFromSuperview()
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.titleLabel)
@@ -61,13 +63,7 @@ class InitalViewController: DPViewController, InitalViewControllerInput {
         ])
     }
     
-    override func setupStyles() {
-        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
-    }
-    
-    override func setupModel() {
-        super.setupModel()
-        
+    override func updateComponets() {
         self.titleLabel.text = self.model?.title
     }
 }

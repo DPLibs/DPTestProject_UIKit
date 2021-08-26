@@ -56,18 +56,15 @@ class SettingViewController: DPViewController, SettingViewControllerInput {
     // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "Settings"
+        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
         self.tableCellsModels = [ChangeAppThemeTableCell.Model()]
         
         self.notificationObserver.observe(
             .notification(AppTheme.didSetCurrentNotification, handler: { [weak self] _ in
                 self?.setupComponets()
-                self?.setupStyles()
+                self?.updateComponets()
             })
         )
-    }
-    
-    override func setupStyles() {
-        self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
 }
 

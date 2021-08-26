@@ -31,7 +31,6 @@
 		E26D940F26D6DC01004BA519 /* UITableView+Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */; };
 		E26D941026D6DC01004BA519 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E426D6DC01004BA519 /* DataSource.swift */; };
 		E26D941126D6DC01004BA519 /* TableScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */; };
-		E26D941226D6DC01004BA519 /* EqualIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E626D6DC01004BA519 /* EqualIdentifiable.swift */; };
 		E26D941F26D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93F926D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift */; };
 		E26D942026D6DC01004BA519 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93FA26D6DC01004BA519 /* UITableView+Extensions.swift */; };
 		E26D942126D6DC01004BA519 /* IndexSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93FB26D6DC01004BA519 /* IndexSet+Extensions.swift */; };
@@ -116,7 +115,6 @@
 		E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Updater.swift"; sourceTree = "<group>"; };
 		E26D93E426D6DC01004BA519 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScrollPosition.swift; sourceTree = "<group>"; };
-		E26D93E626D6DC01004BA519 /* EqualIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqualIdentifiable.swift; sourceTree = "<group>"; };
 		E26D93F926D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwipeActionsConfiguration+Extensions.swift"; sourceTree = "<group>"; };
 		E26D93FA26D6DC01004BA519 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		E26D93FB26D6DC01004BA519 /* IndexSet+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexSet+Extensions.swift"; sourceTree = "<group>"; };
@@ -269,11 +267,14 @@
 		E249F24526A7511F00817CBA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E26D93DB26D6D88A004BA519 /* Table */,
+				E2CAD5CC26CBB22A00123E3C /* DPNavigationController.swift */,
+				E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */,
+				E27C01AC26CB2819000E2303 /* DPTabBarItem.swift */,
 				E2CA558E26CE58FB0018F7F3 /* DPView.swift */,
-				E2CA559026CE5B2E0018F7F3 /* MVCR */,
-				E2CAD5CB26CBB21600123E3C /* Navigation */,
-				E2D7645126C5B2BE0000F4B6 /* TabBar */,
+				E249F24626A7512B00817CBA /* DPViewController.swift */,
+				E249F24826A7516F00817CBA /* DPViewModel.swift */,
+				E2514F4C26AA17B100952E27 /* DPViewRouter.swift */,
+				E26D93DB26D6D88A004BA519 /* Table */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -328,7 +329,6 @@
 				E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */,
 				E26D93E426D6DC01004BA519 /* DataSource.swift */,
 				E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */,
-				E26D93E626D6DC01004BA519 /* EqualIdentifiable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -503,24 +503,6 @@
 			path = "Support Layer";
 			sourceTree = "<group>";
 		};
-		E2CA559026CE5B2E0018F7F3 /* MVCR */ = {
-			isa = PBXGroup;
-			children = (
-				E249F24626A7512B00817CBA /* DPViewController.swift */,
-				E249F24826A7516F00817CBA /* DPViewModel.swift */,
-				E2514F4C26AA17B100952E27 /* DPViewRouter.swift */,
-			);
-			path = MVCR;
-			sourceTree = "<group>";
-		};
-		E2CAD5CB26CBB21600123E3C /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				E2CAD5CC26CBB22A00123E3C /* DPNavigationController.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		E2CAD5CE26CBB41C00123E3C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,15 +510,6 @@
 				E2CAD5D126CBB43800123E3C /* NewsDetailViewModel.swift */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		E2D7645126C5B2BE0000F4B6 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				E27C01AC26CB2819000E2303 /* DPTabBarItem.swift */,
-				E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		E2FDE65826ADD5D700E8F12F /* TableCells */ = {
@@ -767,7 +740,6 @@
 				E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */,
 				E26D93D226D6D3FB004BA519 /* BarButtonItemView.swift in Sources */,
 				E21CFAC126CAD64300793FA1 /* NewsListViewController.swift in Sources */,
-				E26D941226D6DC01004BA519 /* EqualIdentifiable.swift in Sources */,
 				E26D941126D6DC01004BA519 /* TableScrollPosition.swift in Sources */,
 				E26D942526D6DC01004BA519 /* CollectionItem.swift in Sources */,
 				E26D943426D6DFBB004BA519 /* DPTableSectionHeader.swift in Sources */,

@@ -23,18 +23,6 @@ open class DPTableSectionHeader: UITableViewHeaderFooterView {
         // MARK: - Init
         public init() { }
         
-//        open var identifier: String = ""
-        
-        //// MARK: - Equatable
-        //extension TableSectionHeaderViewModel: Equatable {
-        //
-        //    public static func == (lhs: TableSectionHeaderViewModel, rhs: TableSectionHeaderViewModel) -> Bool {
-        //        guard !lhs.identifier.isEmpty, !rhs.identifier.isEmpty else { return false }
-        //
-        //        return lhs.identifier == rhs.identifier
-        //    }
-        //
-        //}
     }
 
     // MARK: - Props
@@ -73,4 +61,5 @@ open class DPTableSectionHeader: UITableViewHeaderFooterView {
 
     @objc
     open func tapGestureHandler(_ gesture: UITapGestureRecognizer) { }
+    
 }

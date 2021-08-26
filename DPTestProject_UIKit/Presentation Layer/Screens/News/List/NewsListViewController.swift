@@ -51,13 +51,10 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "News List"
-    }
-    
-    override func setupStyles() {
         self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
     
-    override func setupModel() {
+    override func updateComponets() {
         self.model?.didGetList = { [weak self] lists in
             let rows = lists.map({ NewsListTabelCell.Model(title: $0, didTap: nil) })
 

@@ -10,12 +10,6 @@ open class DPTableView: UITableView {
         }
     }
     
-    //    open override var contentOffset: CGPoint {
-    //        didSet {
-    //            self.bottomOffset = self.calculateBottomOffset()
-    //        }
-    //    }
-    
     open var adapter: DPTableAdapter? {
         didSet {
             self.dataSource = self.adapter
@@ -24,31 +18,31 @@ open class DPTableView: UITableView {
         }
     }
     
+    open var sections: [DPTableSection] = []
+    
     //    open var emptyPlaceholder: UIView? {
     //        didSet {
     //            self.didSetEmptyPlaceholder()
     //        }
     //    }
-    
     //    open var autoEmptyPlaceholderEnabled: Bool = true
-    
     //    open var bottomOffset: CGPoint = CGPoint(x: 0, y: 0)
     
     // MARK: - Init
     public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
-        self.setupViews()
+        self.setupComponets()
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        self.setupViews()
+        self.setupComponets()
     }
     
     // MARK: - Methods
-    open func setupViews() {}
+    open func setupComponets() {}
     
     open func didSetRefreshControl() {
         guard let refreshControl = self.refreshControl else { return }

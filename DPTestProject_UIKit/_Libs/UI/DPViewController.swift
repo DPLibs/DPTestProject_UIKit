@@ -32,19 +32,17 @@ open class DPViewController: UIViewController, DPViewControllerInput {
         super.viewDidLoad()
         
         self.setupComponets()
-        self.setupModel()
+        self.updateComponets()
     }
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.setupStyles()
+        self.setupComponets()
     }
     
     // MARK: - Methods
     open func setupComponets() {}
     
-    open func setupStyles() {}
-    
-    open func setupModel() {}
+    open func updateComponets() {}
 }

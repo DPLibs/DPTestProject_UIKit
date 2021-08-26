@@ -35,9 +35,6 @@ class NewsDetailViewController: DPViewController, NewsDetailViewControllerInput 
     // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "News Detail"
-    }
-    
-    override func setupStyles() {
         self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
 }

@@ -19,18 +19,6 @@ open class DPTableSection {
         self.footer = footer
     }
     
-//    open var identifier: String = ""
-    ////// MARK: - Equatable
-    ////extension TableSectionModel: Equatable {
-    ////
-    ////    public static func == (lhs: TableSectionModel, rhs: TableSectionModel) -> Bool {
-    ////        guard !lhs.identifier.isEmpty, !rhs.identifier.isEmpty else { return false }
-    ////
-    ////        return lhs.identifier == rhs.identifier
-    ////    }
-    ////
-    ////}
-
 }
 
 public extension DPTableSection {
@@ -40,10 +28,6 @@ public extension DPTableSection {
         
         return self.rows[index]
     }
-    
-//    func insertRow(at index: Int) {
-//
-//    }
     
 }
 

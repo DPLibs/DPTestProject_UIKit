@@ -7,25 +7,25 @@ open class DPView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setupViews()
+        self.setupComponets()
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        self.setupViews()
+        self.setupComponets()
     }
     
     // MARK: - Methods
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setupViews()
+        self.setupComponets()
     }
     
-    open func setupViews() {}
+    open func setupComponets() {}
     
-    open func updateViews() {}
+    open func updateComponets() {}
     
     @objc
     open func tapButtonAction(_ button: UIButton) { }

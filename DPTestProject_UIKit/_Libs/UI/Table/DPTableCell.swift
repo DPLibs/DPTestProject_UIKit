@@ -26,31 +26,11 @@ open class DPTableCell: UITableViewCell {
         public init(didTap: (() -> Void)? = nil) {
             self.didTap = didTap
         }
-        
-//        open var identifier: String = ""
-//
-//        // MARK: - Methods
 //        open func createLeadingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? { .empty }
-//
 //        open func createTrailingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? { .empty }
-//
 //        open func createEditActions(for cell: UITableViewCell) -> [UITableViewRowAction]? { [] }
-//
 //        open func willBeginEditing(for cell: UITableViewCell) { }
-//
 //        open func didEndEditing(for cell: UITableViewCell) { }
-        
-        
-        ////// MARK: - Equatable
-        ////extension TableCellModel: Equatable {
-        ////
-        ////    public static func == (lhs: TableCellModel, rhs: TableCellModel) -> Bool {
-        ////        guard !lhs.identifier.isEmpty, !rhs.identifier.isEmpty else { return false }
-        ////
-        ////        return lhs.identifier == rhs.identifier
-        ////    }
-        ////
-        ////}
     }
     
     // MARK: - Props
@@ -78,12 +58,6 @@ open class DPTableCell: UITableViewCell {
         super.awakeFromNib()
 
         self.setupViews()
-    }
-
-    override open func setHighlighted(_ highlighted: Bool, animated: Bool) { }
-
-    override open func setSelected(_ selected: Bool, animated: Bool) {
-//        self.viewModel?.didTap?()
     }
 
     open func setupViews() {
