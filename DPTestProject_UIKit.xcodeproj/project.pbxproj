@@ -30,9 +30,6 @@
 		E26D93D726D6D674004BA519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26D93D526D6D674004BA519 /* LaunchScreen.storyboard */; };
 		E26D93D926D6D766004BA519 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93D826D6D766004BA519 /* MainNavigationController.swift */; };
 		E26D93DD26D6D895004BA519 /* DPTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93DC26D6D895004BA519 /* DPTableView.swift */; };
-		E26D940E26D6DC01004BA519 /* TableUpdateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E226D6DC01004BA519 /* TableUpdateAction.swift */; };
-		E26D940F26D6DC01004BA519 /* UITableView+Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */; };
-		E26D941026D6DC01004BA519 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E426D6DC01004BA519 /* DataSource.swift */; };
 		E26D941126D6DC01004BA519 /* TableScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */; };
 		E26D941F26D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93F926D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift */; };
 		E26D942026D6DC01004BA519 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D93FA26D6DC01004BA519 /* UITableView+Extensions.swift */; };
@@ -117,9 +114,6 @@
 		E26D93D626D6D674004BA519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DPTestProject_UIKit/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E26D93D826D6D766004BA519 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		E26D93DC26D6D895004BA519 /* DPTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableView.swift; sourceTree = "<group>"; };
-		E26D93E226D6DC01004BA519 /* TableUpdateAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableUpdateAction.swift; sourceTree = "<group>"; };
-		E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Updater.swift"; sourceTree = "<group>"; };
-		E26D93E426D6DC01004BA519 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableScrollPosition.swift; sourceTree = "<group>"; };
 		E26D93F926D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwipeActionsConfiguration+Extensions.swift"; sourceTree = "<group>"; };
 		E26D93FA26D6DC01004BA519 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -334,9 +328,6 @@
 		E26D93E126D6DC01004BA519 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E26D93E226D6DC01004BA519 /* TableUpdateAction.swift */,
-				E26D93E326D6DC01004BA519 /* UITableView+Updater.swift */,
-				E26D93E426D6DC01004BA519 /* DataSource.swift */,
 				E26D93E526D6DC01004BA519 /* TableScrollPosition.swift */,
 			);
 			path = Classes;
@@ -731,7 +722,6 @@
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
 				E236BD1226DADAC50089EB4C /* DPTableViewHeaderFooterView.swift in Sources */,
 				E26D942126D6DC01004BA519 /* IndexSet+Extensions.swift in Sources */,
-				E26D940F26D6DC01004BA519 /* UITableView+Updater.swift in Sources */,
 				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
 				E26D942826D6DC01004BA519 /* Collection+ElementAtIndex+CollectionSectionRepresentable.swift in Sources */,
 				E26D942726D6DC01004BA519 /* CrudableCollectionSectionModel.swift in Sources */,
@@ -746,7 +736,6 @@
 				E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
 				E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */,
-				E26D940E26D6DC01004BA519 /* TableUpdateAction.swift in Sources */,
 				E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */,
 				E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */,
 				E26D93D226D6D3FB004BA519 /* BarButtonItemView.swift in Sources */,
@@ -754,7 +743,6 @@
 				E26D941126D6DC01004BA519 /* TableScrollPosition.swift in Sources */,
 				E26D942526D6DC01004BA519 /* CollectionItem.swift in Sources */,
 				E26D943426D6DFBB004BA519 /* DPTableSectionHeader.swift in Sources */,
-				E26D941026D6DC01004BA519 /* DataSource.swift in Sources */,
 				E27C01AD26CB2819000E2303 /* DPTabBarItem.swift in Sources */,
 				E26D942026D6DC01004BA519 /* UITableView+Extensions.swift in Sources */,
 				E2CAD5D226CBB43800123E3C /* NewsDetailViewModel.swift in Sources */,

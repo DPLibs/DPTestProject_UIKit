@@ -3,6 +3,13 @@ import UIKit
 
 open class DPTableViewHeaderFooterView: UITableViewHeaderFooterView {
     
+    // MARK: - Model
+    open var model: Any? {
+        didSet {
+            self.updateViews()
+        }
+    }
+    
     // MARK: - Init
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -26,8 +33,6 @@ open class DPTableViewHeaderFooterView: UITableViewHeaderFooterView {
     open func setupViews() {}
 
     open func updateViews() {}
-    
-    open func setupModel(_ model: Any?) {}
 
     @objc
     open func tapButtonHandler(_ button: UIButton) {}

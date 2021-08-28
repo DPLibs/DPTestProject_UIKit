@@ -1,6 +1,24 @@
 import Foundation
 import UIKit
 
+//public protocol TableDataOutput: AnyObject {
+//    func beginRefreshing(table: DPTableView)
+//    func endRefreshing(table: DPTableView)
+//
+//    func scrollToPosition(table: DPTableView, position: TableScrollPosition, rowsOffset: Int)
+//    func selectRow(table: DPTableView, indexPath: IndexPath, cell: TableCellInput, model: TableCellModelInput)
+//}
+//
+//public protocol TableCellsOutput: AnyObject {
+//    func cellForRow(table: DPTableView, indexPath: IndexPath, cell: TableCellInput)
+//    func willDisplayRow(table: DPTableView, indexPath: IndexPath, cell: TableCellInput)
+//}
+//
+//public protocol TableScrollOutput: AnyObject {
+//    func didScroll(table: DPTableView, to position: TableScrollPosition, isDragging: Bool)
+//    func scrollPositionAchived(table: DPTableView, position: TableScrollPosition, isAchived: Bool)
+//}
+
 open class DPTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Props
@@ -42,7 +60,7 @@ open class DPTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate 
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DPTableViewCell
         else { return .init() }
 
-        cell.setupModel(row)
+        cell.model = row
         
 //        self.cellsOutput?.cellForRow(table: self, indexPath: indexPath, cell: cell)
 
@@ -52,22 +70,6 @@ open class DPTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate 
     // MARK: - UITableViewDelegate
 
 }
-
-//public protocol TableDataOutput: AnyObject {
-//    func beginRefreshing(table: TableInput)
-//    func endRefreshing(table: TableInput)
-//
-//    func scrollToPosition(table: TableInput, position: TableScrollPosition, rowsOffset: Int)
-//    func selectRow(table: TableInput, indexPath: IndexPath, cell: TableCellInput, model: TableCellModelInput)
-//}
-//public protocol TableCellsOutput: AnyObject {
-//    func cellForRow(table: TableInput, indexPath: IndexPath, cell: TableCellInput)
-//    func willDisplayRow(table: TableInput, indexPath: IndexPath, cell: TableCellInput)
-//}
-//public protocol TableScrollOutput: AnyObject {
-//    func didScroll(table: TableInput, to position: TableScrollPosition, isDragging: Bool)
-//    func scrollPositionAchived(table: TableInput, position: TableScrollPosition, isAchived: Bool)
-//}
 
 //extension Table: UITableViewDelegate {
 //

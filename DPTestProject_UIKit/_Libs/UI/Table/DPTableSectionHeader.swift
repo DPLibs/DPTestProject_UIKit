@@ -27,13 +27,12 @@ open class DPTableSectionHeaderView<ViewModel: DPTableSectionHeader>: DPTableVie
     
     // MARK: - Props
     open var viewModel: ViewModel? {
-        didSet {
-            self.updateViews()
+        get {
+            self.model as? ViewModel
         }
-    }
-
-    open override func setupModel(_ model: Any?) {
-        self.viewModel = model as? ViewModel
+        set {
+            self.model = newValue
+        }
     }
     
 }

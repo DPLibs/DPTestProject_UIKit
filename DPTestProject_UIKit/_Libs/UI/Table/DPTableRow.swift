@@ -34,19 +34,18 @@ open class DPTableRowView<ViewModel: DPTableRow>: DPTableViewCell {
     
     // MARK: - Props
     open var viewModel: ViewModel? {
-        didSet {
-            self.updateViews()
+        get {
+            self.model as? ViewModel
+        }
+        set {
+            self.model = newValue
         }
     }
-
+    
     // MARK: - Methods
     open override func setupViews() {
         self.contentView.isUserInteractionEnabled = true
         self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapGestureAction(_:))))
-    }
-    
-    open override func setupModel(_ model: Any?) {
-        self.viewModel = model as? ViewModel
     }
 
     @objc

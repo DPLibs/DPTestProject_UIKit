@@ -3,6 +3,13 @@ import UIKit
 
 open class DPTableViewCell: UITableViewCell {
     
+    // MARK: - Props
+    open var model: Any? {
+        didSet {
+            self.updateViews()
+        }
+    }
+    
     // MARK: - Init
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,8 +33,6 @@ open class DPTableViewCell: UITableViewCell {
     open func setupViews() {}
 
     open func updateViews() {}
-    
-    open func setupModel(_ model: Any?) {}
 
     @objc
     open func tapButtonAction(_ button: UIButton) { }
