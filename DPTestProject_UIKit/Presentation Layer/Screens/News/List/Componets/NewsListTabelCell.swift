@@ -8,12 +8,13 @@
 import Foundation
 import UIKit
 
-class NewsListTabelCell: DPTableCell {
+class NewsListTableRowView: DPTableRowView<NewsListTableRowView.Row> {
     
-    class Model: DPTableCell.ViewModel {
+    // MARK: - Static
+    class Row: DPTableRow {
         
         override var cellIdentifier: String? {
-            "NewsListTabelCell"
+            "NewsListTableRowView"
         }
         
         let title: String
@@ -26,17 +27,10 @@ class NewsListTabelCell: DPTableCell {
         
     }
     
-    var model: Model? {
-        get {
-            self.viewModel as? Model
-        }
-        set {
-            self.viewModel = newValue
-        }
-    }
-    
+    // MARK: - Props
     lazy var titleLabel: UILabel = .init()
     
+    // MARK: - Methods
     override func setupViews() {
         super.setupViews()
         
@@ -55,7 +49,8 @@ class NewsListTabelCell: DPTableCell {
     }
     
     override func updateViews() {
-        guard let model = self.model else { return }
+        print("!!!")
+        guard let model = self.viewModel else { return }
         
         self.titleLabel.text = model.title
     }

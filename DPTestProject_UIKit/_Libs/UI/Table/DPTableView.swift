@@ -44,6 +44,11 @@ open class DPTableView: UITableView {
     // MARK: - Methods
     open func setupComponets() {}
     
+    func reloadData(with sections: [DPTableSection]) {
+        self.sections = sections
+        self.reloadData()
+    }
+    
     open func didSetRefreshControl() {
         guard let refreshControl = self.refreshControl else { return }
 

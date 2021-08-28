@@ -23,7 +23,7 @@ class NewsListViewModel: DPViewModel, NewsListViewModelInput {
         var lists: [String] {
             var result: [String] = []
             
-            for i in 0...100 {
+            for i in 0...10 {
                 result += [i.description]
             }
             

@@ -39,10 +39,10 @@ open class DPTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate 
         guard
             let row = self.sections.getRow(at: indexPath),
             let cellIdentifier = row.cellIdentifier,
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DPTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DPTableViewCell
         else { return .init() }
 
-        cell.viewModel = row
+        cell.setupModel(row)
         
 //        self.cellsOutput?.cellForRow(table: self, indexPath: indexPath, cell: cell)
 
@@ -51,107 +51,6 @@ open class DPTableAdapter: NSObject, UITableViewDataSource, UITableViewDelegate 
     
     // MARK: - UITableViewDelegate
 
-}
-
-open class DPTablePerfromer: NSObject {
-    
-    public struct Action {
-
-        public enum ActionType {
-
-            // MARK: - Insert Sections
-            case insertSectionsAtIndexSet(_ indexSet: IndexSet, models: [DPTableSection])
-            case insertSectionsAtSections(_ sections: [DPTableSection], models: [DPTableSection])
-            case insertSectionsAtStart(models: [DPTableSection])
-            case insertSectionsAtEnd(models: [DPTableSection])
-
-            // MARK: - Delete Sections
-            case deleteSectionsAtIndexSet(_ indexSet: IndexSet)
-            case deleteSectionsAtSections(_ sections: [DPTableSection])
-            case deleteSectionsAtStart(count: Int)
-            case deleteSectionsAtEnd(count: Int)
-
-            // MARK: - Reload Sections
-            case reloadSectionsAtIndexSet(_ indexSet: IndexSet, models: [DPTableSection])
-            case reloadSectionsAtSections(_ sections: [DPTableSection], models: [DPTableSection])
-            case reloadSectionsAtStart(models: [DPTableSection])
-            case reloadSectionsAtEnd(models: [DPTableSection])
-
-            // MARK: - Insert Rows
-//            case insertRowsAtIndexPaths(_ indexPaths: [IndexPath], models: [DPTableCell.ViewModel])
-//            case insertRowsAtRows(_ rows: [DPTableCell.ViewModel], models: [DPTableCell.ViewModel])
-//            case insertRowsAtStart(models: [DPTableCell.ViewModel])
-//            case insertRowsAtEnd(models: [DPTableCell.ViewModel])
-//
-//            // MARK: - Delete Rows
-//            case deleteRowsAtIndexPaths(_ indexPaths: [IndexPath])
-//            case deleteRowsAtRows(_ rows: [DPTableCell.ViewModel])
-//            case deleteRowsAtStart(count: Int)
-//            case deleteRowsAtEnd(count: Int)
-//
-//            // MARK: - Reload Rows
-//            case reloadRowsAtIndexPaths(_ indexPaths: [IndexPath], models: [DPTableCell.ViewModel])
-//            case reloadRowsAtRows(_ rows: [DPTableCell.ViewModel], models: [DPTableCell.ViewModel])
-//            case reloadRowsAtStart(models: [DPTableCell.ViewModel])
-//            case reloadRowsAtEnd(models: [DPTableCell.ViewModel])
-        }
-
-        let type: ActionType
-        let animation: UITableView.RowAnimation
-
-        public init(type: ActionType, animation: UITableView.RowAnimation) {
-            self.type = type
-            self.animation = animation
-        }
-    }
-    
-    open weak var tableView: DPTableView?
-    
-    open var sections: [DPTableSection] {
-        get {
-            self.tableView?.sections ?? []
-        }
-        set {
-            self.tableView?.sections = newValue
-        }
-    }
-    
-    open func reload(_ sections: [DPTableSection]) {
-        self.sections = sections
-        self.tableView?.reloadData()
-    }
-    
-//    open func performBatchUpdates(_ actions: Action.ActionType..., completion: ((Bool) -> Void)? = nil) {
-//        for action in actions {
-//            switch action {
-//            case .insertSectionsAtIndexSet(_, models: let models):
-//                <#code#>
-//            case .insertSectionsAtSections(_, models: let models):
-//                <#code#>
-//            case .insertSectionsAtStart(models: let models):
-//                <#code#>
-//            case .insertSectionsAtEnd(models: let models):
-//                <#code#>
-//            case .deleteSectionsAtIndexSet(_):
-//                <#code#>
-//            case .deleteSectionsAtSections(_):
-//                <#code#>
-//            case .deleteSectionsAtStart(count: let count):
-//                <#code#>
-//            case .deleteSectionsAtEnd(count: let count):
-//                <#code#>
-//            case .reloadSectionsAtIndexSet(_, models: let models):
-//                <#code#>
-//            case .reloadSectionsAtSections(_, models: let models):
-//                <#code#>
-//            case .reloadSectionsAtStart(models: let models):
-//                <#code#>
-//            case .reloadSectionsAtEnd(models: let models):
-//                <#code#>
-//            }
-//        }
-//    }
-    
 }
 
 //public protocol TableDataOutput: AnyObject {

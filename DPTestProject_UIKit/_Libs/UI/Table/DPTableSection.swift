@@ -4,15 +4,15 @@ import Foundation
 open class DPTableSection {
 
     // MARK: - Props
-    open var rows: [DPTableCell.ViewModel]
-    open var header: DPTableSectionHeader.ViewModel?
-    open var footer: DPTableSectionHeader.ViewModel?
+    open var rows: [DPTableRow]
+    open var header: DPTableSectionHeader?
+    open var footer: DPTableSectionHeader?
 
     // MARK: - Init
     public init(
-        rows: [DPTableCell.ViewModel],
-        header: DPTableSectionHeader.ViewModel? = nil,
-        footer: DPTableSectionHeader.ViewModel? = nil
+        rows: [DPTableRow],
+        header: DPTableSectionHeader? = nil,
+        footer: DPTableSectionHeader? = nil
     ) {
         self.rows = rows
         self.header = header
@@ -23,7 +23,7 @@ open class DPTableSection {
 
 public extension DPTableSection {
     
-    func getRow(at index: Int) -> DPTableCell.ViewModel? {
+    func getRow(at index: Int) -> DPTableRow? {
         guard self.rows.indices.contains(index) else { return nil }
         
         return self.rows[index]
@@ -33,7 +33,7 @@ public extension DPTableSection {
 
 public extension Array where Element == DPTableSection {
     
-    func getRow(at indexPath: IndexPath) -> DPTableCell.ViewModel? {
+    func getRow(at indexPath: IndexPath) -> DPTableRow? {
         guard self.indices.contains(indexPath.section) else { return nil }
         
         return self[indexPath.section].getRow(at: indexPath.row)

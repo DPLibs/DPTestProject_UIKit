@@ -15,6 +15,9 @@
 		E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9226C3DB7C00121DEE /* AppTheme.swift */; };
 		E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */; };
 		E22ADF9826C3DF2D00121DEE /* DPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */; };
+		E236BD0E26DAD0270089EB4C /* DPTableView+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */; };
+		E236BD1026DAD69C0089EB4C /* DPTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */; };
+		E236BD1226DADAC50089EB4C /* DPTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD1126DADAC50089EB4C /* DPTableViewHeaderFooterView.swift */; };
 		E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F23B26A74A1000817CBA /* InitalViewController.swift */; };
 		E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24326A74BE500817CBA /* InitalViewModel.swift */; };
 		E249F24726A7512B00817CBA /* DPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24626A7512B00817CBA /* DPViewController.swift */; };
@@ -44,7 +47,7 @@
 		E26D942C26D6DC01004BA519 /* TableCellFirstRespondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D940A26D6DC01004BA519 /* TableCellFirstRespondable.swift */; };
 		E26D942D26D6DC01004BA519 /* TableCellWithSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D940B26D6DC01004BA519 /* TableCellWithSwipeAction.swift */; };
 		E26D942E26D6DC01004BA519 /* DataSourceEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D940C26D6DC01004BA519 /* DataSourceEmptyView.swift */; };
-		E26D943026D6DC7A004BA519 /* DPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D942F26D6DC7A004BA519 /* DPTableCell.swift */; };
+		E26D943026D6DC7A004BA519 /* DPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */; };
 		E26D943226D6DEA4004BA519 /* DPTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943126D6DEA4004BA519 /* DPTableSection.swift */; };
 		E26D943426D6DFBB004BA519 /* DPTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */; };
 		E26D943626D6EAD7004BA519 /* DPTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943526D6EAD7004BA519 /* DPTableAdapter.swift */; };
@@ -99,6 +102,9 @@
 		E22ADF9226C3DB7C00121DEE /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewRouter+Extensions.swift"; sourceTree = "<group>"; };
 		E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTabBarController.swift; sourceTree = "<group>"; };
+		E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPTableView+Update.swift"; sourceTree = "<group>"; };
+		E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableRow.swift; sourceTree = "<group>"; };
+		E236BD1126DADAC50089EB4C /* DPTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		E249F23B26A74A1000817CBA /* InitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
 		E249F24326A74BE500817CBA /* InitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewModel.swift; sourceTree = "<group>"; };
 		E249F24626A7512B00817CBA /* DPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +134,7 @@
 		E26D940A26D6DC01004BA519 /* TableCellFirstRespondable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellFirstRespondable.swift; sourceTree = "<group>"; };
 		E26D940B26D6DC01004BA519 /* TableCellWithSwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellWithSwipeAction.swift; sourceTree = "<group>"; };
 		E26D940C26D6DC01004BA519 /* DataSourceEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceEmptyView.swift; sourceTree = "<group>"; };
-		E26D942F26D6DC7A004BA519 /* DPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableCell.swift; sourceTree = "<group>"; };
+		E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableViewCell.swift; sourceTree = "<group>"; };
 		E26D943126D6DEA4004BA519 /* DPTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSection.swift; sourceTree = "<group>"; };
 		E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSectionHeader.swift; sourceTree = "<group>"; };
 		E26D943526D6EAD7004BA519 /* DPTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableAdapter.swift; sourceTree = "<group>"; };
@@ -304,10 +310,13 @@
 			isa = PBXGroup;
 			children = (
 				E26D943526D6EAD7004BA519 /* DPTableAdapter.swift */,
-				E26D942F26D6DC7A004BA519 /* DPTableCell.swift */,
+				E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */,
 				E26D943126D6DEA4004BA519 /* DPTableSection.swift */,
 				E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */,
 				E26D93DC26D6D895004BA519 /* DPTableView.swift */,
+				E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */,
+				E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */,
+				E236BD1126DADAC50089EB4C /* DPTableViewHeaderFooterView.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -715,11 +724,12 @@
 				E2ABB24926A73EEB00A1BEEB /* DPTestProject_UIKit.xcdatamodeld in Sources */,
 				E2ABB27826A740BB00A1BEEB /* AppDelegate.swift in Sources */,
 				E26D943626D6EAD7004BA519 /* DPTableAdapter.swift in Sources */,
-				E26D943026D6DC7A004BA519 /* DPTableCell.swift in Sources */,
+				E26D943026D6DC7A004BA519 /* DPTableViewCell.swift in Sources */,
 				E21CFAC326CAD6A100793FA1 /* NewsListViewModel.swift in Sources */,
 				E249F24726A7512B00817CBA /* DPViewController.swift in Sources */,
 				E26D941F26D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift in Sources */,
 				E2ABB24126A73EEB00A1BEEB /* SceneDelegate.swift in Sources */,
+				E236BD1226DADAC50089EB4C /* DPTableViewHeaderFooterView.swift in Sources */,
 				E26D942126D6DC01004BA519 /* IndexSet+Extensions.swift in Sources */,
 				E26D940F26D6DC01004BA519 /* UITableView+Updater.swift in Sources */,
 				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
@@ -732,6 +742,7 @@
 				E249F24926A7516F00817CBA /* DPViewModel.swift in Sources */,
 				E2CAD5CD26CBB22A00123E3C /* DPNavigationController.swift in Sources */,
 				E26D942D26D6DC01004BA519 /* TableCellWithSwipeAction.swift in Sources */,
+				E236BD1026DAD69C0089EB4C /* DPTableRow.swift in Sources */,
 				E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
 				E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */,
@@ -753,6 +764,7 @@
 				E26D942326D6DC01004BA519 /* CollectionAdapter.swift in Sources */,
 				E2514F5226AA192E00952E27 /* SettingViewModel.swift in Sources */,
 				E2CA559226CE5B710018F7F3 /* NotificationObserver.swift in Sources */,
+				E236BD0E26DAD0270089EB4C /* DPTableView+Update.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

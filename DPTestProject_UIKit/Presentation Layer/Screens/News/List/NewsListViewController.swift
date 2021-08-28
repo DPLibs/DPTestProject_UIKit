@@ -26,7 +26,7 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     lazy var tableView: DPTableView = {
         let result = DPTableView()
         result.backgroundColor = AppTheme.current.mainBackgroundColor
-        result.register(NewsListTabelCell.self, forCellReuseIdentifier: "NewsListTabelCell")
+        result.register(NewsListTableRowView.self, forCellReuseIdentifier: "NewsListTableRowView")
         result.refreshControl = .init()
         result.adapter = .init()
         
@@ -51,16 +51,41 @@ class NewsListViewController: DPViewController, NewsListViewControllerInput {
     // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "News List"
+        self.navigationItem.rightBarButtonItems = [
+            .init(title: "Add", style: .plain, target: self, action: #selector(self.tapAdd)),
+            .init(title: "Delete", style: .plain, target: self, action: #selector(self.tapDelete))
+        ]
         self.view.backgroundColor = AppTheme.current.mainBackgroundColor
     }
     
     override func updateComponets() {
         self.model?.didGetList = { [weak self] lists in
-            let rows = lists.map({ NewsListTabelCell.Model(title: $0, didTap: nil) })
+            let rows = lists.map({ NewsListTableRowView.Row(title: $0, didTap: nil) })
 
-            self?.tableView.adapter?.reload([.init(rows: rows)])
+            self?.tableView.reloadData(with: [.init(rows: rows)])
         }
         
         self.model?.getList()
     }
+    
+    @objc
+    private func tapAdd() {
+        let sections: [DPTableSection] = [
+            .init(rows: [
+                NewsListTableRowView.Row(title: "New section", didTap: nil)
+            ])
+        ]
+        
+        self.tableView.performBatchUpdates(withUpdates: [
+            .insertSections(sections, at: .init(integer: 0), with: .top)
+        ])
+    }
+    
+    @objc
+    private func tapDelete() {
+        self.tableView.performBatchUpdates(withUpdates: [
+            .deleteSections(at: .init(integer: 0), with: .left)
+        ])
+    }
+    
 }
