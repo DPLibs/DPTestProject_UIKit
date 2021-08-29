@@ -10,13 +10,13 @@
 		B8B055C2FD7AECA2B702881D /* Pods_DPTestProject_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE044DD3B6E8B6D56C1DE5B /* Pods_DPTestProject_UIKit.framework */; };
 		E21CFAC126CAD64300793FA1 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CFAC026CAD64300793FA1 /* NewsListViewController.swift */; };
 		E21CFAC326CAD6A100793FA1 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CFAC226CAD6A100793FA1 /* NewsListViewModel.swift */; };
-		E21CFAC626CAD72700793FA1 /* NewsListTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CFAC526CAD72700793FA1 /* NewsListTableRowView.swift */; };
+		E21CFAC626CAD72700793FA1 /* NewsListTableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CFAC526CAD72700793FA1 /* NewsListTableRowCell.swift */; };
 		E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CFAC726CAE8F200793FA1 /* TabBarItemView.swift */; };
 		E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9226C3DB7C00121DEE /* AppTheme.swift */; };
 		E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */; };
 		E22ADF9826C3DF2D00121DEE /* DPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */; };
 		E236BD0E26DAD0270089EB4C /* DPTableView+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */; };
-		E236BD1026DAD69C0089EB4C /* DPTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */; };
+		E236BD1026DAD69C0089EB4C /* DPTableRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD0F26DAD69C0089EB4C /* DPTableRowModel.swift */; };
 		E236BD1226DADAC50089EB4C /* DPTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236BD1126DADAC50089EB4C /* DPTableViewHeaderFooterView.swift */; };
 		E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F23B26A74A1000817CBA /* InitalViewController.swift */; };
 		E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249F24326A74BE500817CBA /* InitalViewModel.swift */; };
@@ -37,8 +37,8 @@
 		E26D942D26D6DC01004BA519 /* TableCellWithSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D940B26D6DC01004BA519 /* TableCellWithSwipeAction.swift */; };
 		E26D942E26D6DC01004BA519 /* DPPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D940C26D6DC01004BA519 /* DPPlaceholderView.swift */; };
 		E26D943026D6DC7A004BA519 /* DPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */; };
-		E26D943226D6DEA4004BA519 /* DPTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943126D6DEA4004BA519 /* DPTableSection.swift */; };
-		E26D943426D6DFBB004BA519 /* DPTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */; };
+		E26D943226D6DEA4004BA519 /* DPTableSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943126D6DEA4004BA519 /* DPTableSectionModel.swift */; };
+		E26D943426D6DFBB004BA519 /* DPTableSectionHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D943326D6DFBB004BA519 /* DPTableSectionHeaderModel.swift */; };
 		E27C01AD26CB2819000E2303 /* DPTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C01AC26CB2819000E2303 /* DPTabBarItem.swift */; };
 		E27C01B026CB2A99000E2303 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C01AF26CB2A99000E2303 /* MainTabBarController.swift */; };
 		E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */; };
@@ -51,10 +51,12 @@
 		E2BE1DE926DAFE1A003EDD7F /* DPTableDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DE826DAFE1A003EDD7F /* DPTableDataSourceAdapter.swift */; };
 		E2BE1DEB26DAFE51003EDD7F /* DPTableDelegateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DEA26DAFE51003EDD7F /* DPTableDelegateAdapter.swift */; };
 		E2BE1DEE26DAFF99003EDD7F /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DED26DAFF99003EDD7F /* UITableView+Extensions.swift */; };
-		E2BE1DF026DB012B003EDD7F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DEF26DB012B003EDD7F /* String+Extensions.swift */; };
 		E2BE1DF226DB019B003EDD7F /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DF126DB019B003EDD7F /* NSObject+Extensions.swift */; };
 		E2BE1DF526DB17AE003EDD7F /* DPViewErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DF426DB17AE003EDD7F /* DPViewErrorHandler.swift */; };
 		E2BE1DF726DB1AB5003EDD7F /* DPCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DF626DB1AB5003EDD7F /* DPCastViewController.swift */; };
+		E2BE1DFA26DBEFFC003EDD7F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DF926DBEFFC003EDD7F /* String+Extensions.swift */; };
+		E2BE1DFC26DBF11A003EDD7F /* DPTableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DFB26DBF11A003EDD7F /* DPTableRowCell.swift */; };
+		E2BE1DFE26DBF13D003EDD7F /* DPTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE1DFD26DBF13D003EDD7F /* DPTableSectionHeaderView.swift */; };
 		E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA558E26CE58FB0018F7F3 /* DPView.swift */; };
 		E2CA559226CE5B710018F7F3 /* DPNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA559126CE5B710018F7F3 /* DPNotificationObserver.swift */; };
 		E2CAD5CD26CBB22A00123E3C /* DPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CAD5CC26CBB22A00123E3C /* DPNavigationController.swift */; };
@@ -85,7 +87,7 @@
 		DDE044DD3B6E8B6D56C1DE5B /* Pods_DPTestProject_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPTestProject_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21CFAC026CAD64300793FA1 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		E21CFAC226CAD6A100793FA1 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
-		E21CFAC526CAD72700793FA1 /* NewsListTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableRowView.swift; sourceTree = "<group>"; };
+		E21CFAC526CAD72700793FA1 /* NewsListTableRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableRowCell.swift; sourceTree = "<group>"; };
 		E21CFAC726CAE8F200793FA1 /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		E221846526A743D8009BEFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = DPTestProject_UIKit/Info.plist; sourceTree = SOURCE_ROOT; };
 		E221846726A743FB009BEFFC /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -96,7 +98,7 @@
 		E22ADF9526C3DDFB00121DEE /* ViewRouter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewRouter+Extensions.swift"; sourceTree = "<group>"; };
 		E22ADF9726C3DF2D00121DEE /* DPTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTabBarController.swift; sourceTree = "<group>"; };
 		E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPTableView+Update.swift"; sourceTree = "<group>"; };
-		E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableRow.swift; sourceTree = "<group>"; };
+		E236BD0F26DAD69C0089EB4C /* DPTableRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableRowModel.swift; sourceTree = "<group>"; };
 		E236BD1126DADAC50089EB4C /* DPTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		E249F23B26A74A1000817CBA /* InitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewController.swift; sourceTree = "<group>"; };
 		E249F24326A74BE500817CBA /* InitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitalViewModel.swift; sourceTree = "<group>"; };
@@ -117,8 +119,8 @@
 		E26D940B26D6DC01004BA519 /* TableCellWithSwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellWithSwipeAction.swift; sourceTree = "<group>"; };
 		E26D940C26D6DC01004BA519 /* DPPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPPlaceholderView.swift; sourceTree = "<group>"; };
 		E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableViewCell.swift; sourceTree = "<group>"; };
-		E26D943126D6DEA4004BA519 /* DPTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSection.swift; sourceTree = "<group>"; };
-		E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSectionHeader.swift; sourceTree = "<group>"; };
+		E26D943126D6DEA4004BA519 /* DPTableSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSectionModel.swift; sourceTree = "<group>"; };
+		E26D943326D6DFBB004BA519 /* DPTableSectionHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSectionHeaderModel.swift; sourceTree = "<group>"; };
 		E27C01AC26CB2819000E2303 /* DPTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTabBarItem.swift; sourceTree = "<group>"; };
 		E27C01AF26CB2A99000E2303 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E2977A4D26ADC8F4005A323D /* Libs+AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Libs+AppTheme.swift"; sourceTree = "<group>"; };
@@ -136,10 +138,12 @@
 		E2BE1DE826DAFE1A003EDD7F /* DPTableDataSourceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableDataSourceAdapter.swift; sourceTree = "<group>"; };
 		E2BE1DEA26DAFE51003EDD7F /* DPTableDelegateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableDelegateAdapter.swift; sourceTree = "<group>"; };
 		E2BE1DED26DAFF99003EDD7F /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		E2BE1DEF26DB012B003EDD7F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E2BE1DF126DB019B003EDD7F /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		E2BE1DF426DB17AE003EDD7F /* DPViewErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPViewErrorHandler.swift; sourceTree = "<group>"; };
 		E2BE1DF626DB1AB5003EDD7F /* DPCastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCastViewController.swift; sourceTree = "<group>"; };
+		E2BE1DF926DBEFFC003EDD7F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E2BE1DFB26DBF11A003EDD7F /* DPTableRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableRowCell.swift; sourceTree = "<group>"; };
+		E2BE1DFD26DBF13D003EDD7F /* DPTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		E2CA558E26CE58FB0018F7F3 /* DPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPView.swift; sourceTree = "<group>"; };
 		E2CA559126CE5B710018F7F3 /* DPNotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPNotificationObserver.swift; sourceTree = "<group>"; };
 		E2CAD5CC26CBB22A00123E3C /* DPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPNavigationController.swift; sourceTree = "<group>"; };
@@ -211,7 +215,7 @@
 		E21CFAC426CAD71600793FA1 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
-				E21CFAC526CAD72700793FA1 /* NewsListTableRowView.swift */,
+				E21CFAC526CAD72700793FA1 /* NewsListTableRowCell.swift */,
 			);
 			path = Componets;
 			sourceTree = "<group>";
@@ -294,9 +298,11 @@
 			children = (
 				E2BE1DE826DAFE1A003EDD7F /* DPTableDataSourceAdapter.swift */,
 				E2BE1DEA26DAFE51003EDD7F /* DPTableDelegateAdapter.swift */,
-				E236BD0F26DAD69C0089EB4C /* DPTableRow.swift */,
-				E26D943126D6DEA4004BA519 /* DPTableSection.swift */,
-				E26D943326D6DFBB004BA519 /* DPTableSectionHeader.swift */,
+				E236BD0F26DAD69C0089EB4C /* DPTableRowModel.swift */,
+				E2BE1DFB26DBF11A003EDD7F /* DPTableRowCell.swift */,
+				E26D943126D6DEA4004BA519 /* DPTableSectionModel.swift */,
+				E26D943326D6DFBB004BA519 /* DPTableSectionHeaderModel.swift */,
+				E2BE1DFD26DBF13D003EDD7F /* DPTableSectionHeaderView.swift */,
 				E26D93DC26D6D895004BA519 /* DPTableView.swift */,
 				E236BD0D26DAD0270089EB4C /* DPTableView+Update.swift */,
 				E26D942F26D6DC7A004BA519 /* DPTableViewCell.swift */,
@@ -436,7 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				E2BE1DF126DB019B003EDD7F /* NSObject+Extensions.swift */,
-				E2BE1DEF26DB012B003EDD7F /* String+Extensions.swift */,
+				E2BE1DF926DBEFFC003EDD7F /* String+Extensions.swift */,
 				E26D93F926D6DC01004BA519 /* UISwipeActionsConfiguration+Extensions.swift */,
 				E2BE1DED26DAFF99003EDD7F /* UITableView+Extensions.swift */,
 			);
@@ -637,10 +643,12 @@
 				E26D93D926D6D766004BA519 /* MainNavigationController.swift in Sources */,
 				E2D7645326C5B2D30000F4B6 /* TabBarView.swift in Sources */,
 				E2514F4D26AA17B100952E27 /* DPViewRouter.swift in Sources */,
+				E2BE1DFA26DBEFFC003EDD7F /* String+Extensions.swift in Sources */,
 				E27C01B026CB2A99000E2303 /* MainTabBarController.swift in Sources */,
 				E22ADF9826C3DF2D00121DEE /* DPTabBarController.swift in Sources */,
 				E2BE1DF526DB17AE003EDD7F /* DPViewErrorHandler.swift in Sources */,
 				E26D942E26D6DC01004BA519 /* DPPlaceholderView.swift in Sources */,
+				E2BE1DFC26DBF11A003EDD7F /* DPTableRowCell.swift in Sources */,
 				E2BE1DEE26DAFF99003EDD7F /* UITableView+Extensions.swift in Sources */,
 				E26D93D426D6D418004BA519 /* NavigationBarView.swift in Sources */,
 				E249F23C26A74A1000817CBA /* InitalViewController.swift in Sources */,
@@ -656,27 +664,27 @@
 				E2BE1DF226DB019B003EDD7F /* NSObject+Extensions.swift in Sources */,
 				E22ADF9326C3DB7C00121DEE /* AppTheme.swift in Sources */,
 				E26D942726D6DC01004BA519 /* CrudableCollectionSectionModel.swift in Sources */,
-				E21CFAC626CAD72700793FA1 /* NewsListTableRowView.swift in Sources */,
-				E2BE1DF026DB012B003EDD7F /* String+Extensions.swift in Sources */,
+				E21CFAC626CAD72700793FA1 /* NewsListTableRowCell.swift in Sources */,
 				E22ADF9626C3DDFB00121DEE /* ViewRouter+Extensions.swift in Sources */,
 				E26D942C26D6DC01004BA519 /* TableCellFirstRespondable.swift in Sources */,
 				E249F24926A7516F00817CBA /* DPViewModel.swift in Sources */,
 				E2CAD5CD26CBB22A00123E3C /* DPNavigationController.swift in Sources */,
 				E26D942D26D6DC01004BA519 /* TableCellWithSwipeAction.swift in Sources */,
-				E236BD1026DAD69C0089EB4C /* DPTableRow.swift in Sources */,
+				E236BD1026DAD69C0089EB4C /* DPTableRowModel.swift in Sources */,
 				E21CFAC826CAE8F200793FA1 /* TabBarItemView.swift in Sources */,
 				E249F24426A74BE500817CBA /* InitalViewModel.swift in Sources */,
 				E2CA558F26CE58FB0018F7F3 /* DPView.swift in Sources */,
 				E2977A4E26ADC8F4005A323D /* Libs+AppTheme.swift in Sources */,
+				E2BE1DFE26DBF13D003EDD7F /* DPTableSectionHeaderView.swift in Sources */,
 				E2BE1DF726DB1AB5003EDD7F /* DPCastViewController.swift in Sources */,
 				E2514F5026AA192200952E27 /* SettingViewController.swift in Sources */,
 				E26D93D226D6D3FB004BA519 /* BarButtonItemView.swift in Sources */,
 				E21CFAC126CAD64300793FA1 /* NewsListViewController.swift in Sources */,
-				E26D943426D6DFBB004BA519 /* DPTableSectionHeader.swift in Sources */,
+				E26D943426D6DFBB004BA519 /* DPTableSectionHeaderModel.swift in Sources */,
 				E2BE1DE926DAFE1A003EDD7F /* DPTableDataSourceAdapter.swift in Sources */,
 				E27C01AD26CB2819000E2303 /* DPTabBarItem.swift in Sources */,
 				E2FDE65B26ADD60600E8F12F /* ChangeAppThemeTableCell.swift in Sources */,
-				E26D943226D6DEA4004BA519 /* DPTableSection.swift in Sources */,
+				E26D943226D6DEA4004BA519 /* DPTableSectionModel.swift in Sources */,
 				E26D942326D6DC01004BA519 /* CollectionAdapter.swift in Sources */,
 				E2514F5226AA192E00952E27 /* SettingViewModel.swift in Sources */,
 				E2CA559226CE5B710018F7F3 /* DPNotificationObserver.swift in Sources */,

@@ -2,42 +2,42 @@ import Foundation
 import UIKit
 
 // MARK: - Data Output
-public protocol TableDataOutput: AnyObject {
+public protocol DPTableDataOutput: AnyObject {
     func beginRefreshing(_ tableView: DPTableView)
     func endRefreshing(_ tableView: DPTableView)
-    func selectRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell, row: DPTableRow)
+    func selectRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell, row: DPTableRowModel)
     func scrollToPosition(_ tableView: DPTableView, position: UITableView.ScrollPosition, rowsOffset: Int)
     func topAchived(_ tableView: DPTableView)
     func bottomAchived(_ tableView: DPTableView)
 }
 
-public extension TableDataOutput {
+public extension DPTableDataOutput {
     func beginRefreshing(_ tableView: DPTableView) {}
     func endRefreshing(_ tableView: DPTableView) {}
-    func selectRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell, row: DPTableRow) {}
+    func selectRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell, row: DPTableRowModel) {}
     func scrollToPosition(_ tableView: DPTableView, position: UITableView.ScrollPosition, rowsOffset: Int) {}
     func topAchived(_ tableView: DPTableView) {}
     func bottomAchived(_ tableView: DPTableView) {}
 }
 
 // MARK: - Cells Output
-public protocol TableCellsOutput: AnyObject {
+public protocol DPTableCellsOutput: AnyObject {
     func cellForRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell)
     func willDisplayRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell)
 }
 
-public extension TableCellsOutput {
+public extension DPTableCellsOutput {
     func cellForRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell) {}
     func willDisplayRow(_ tableView: DPTableView, indexPath: IndexPath, cell: UITableViewCell) {}
 }
 
 // MARK: - Scroll Output
-public protocol TableScrollOutput: AnyObject {
+public protocol DPTableScrollOutput: AnyObject {
     func didScroll(_ tableView: DPTableView, to position: UITableView.ScrollPosition, isDragging: Bool)
     func scrollPositionAchived(_ tableView: DPTableView, position: UITableView.ScrollPosition, isAchived: Bool)
 }
 
-public extension TableScrollOutput {
+public extension DPTableScrollOutput {
     func didScroll(_ tableView: DPTableView, to position: UITableView.ScrollPosition, isDragging: Bool) {}
     func scrollPositionAchived(_ tableView: DPTableView, position: UITableView.ScrollPosition, isAchived: Bool) {}
 }
@@ -52,11 +52,17 @@ open class DPTableView: UITableView {
         }
     }
     
-    open weak var dataOutput: TableDataOutput?
+    open override var tableHeaderView: UIView? {
+        didSet {
+            self.didSetRefreshControl()
+        }
+    }
     
-    open weak var cellsOutput: TableCellsOutput?
+    open weak var dataOutput: DPTableDataOutput?
     
-    open weak var scrollOutput: TableScrollOutput?
+    open weak var cellsOutput: DPTableCellsOutput?
+    
+    open weak var scrollOutput: DPTableScrollOutput?
     
     open var dataSourceAdapter: DPTableDataSourceAdapter? {
         didSet {
@@ -70,7 +76,7 @@ open class DPTableView: UITableView {
         }
     }
     
-    open var sections: [DPTableSection] = [] {
+    open var sections: [DPTableSectionModel] = [] {
         didSet {
             self.updatePlaceholderViewAutoHidden()
         }
@@ -104,7 +110,7 @@ open class DPTableView: UITableView {
         self.dataSourceAdapter = .init()
     }
     
-    open func reloadData(with sections: [DPTableSection]) {
+    open func reloadData(with sections: [DPTableSectionModel]) {
         self.sections = sections
         self.reloadData()
     }

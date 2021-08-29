@@ -5,15 +5,14 @@ public extension UITableView {
     
     func registerCellClasses(_ cellClasses: [AnyClass]) {
         cellClasses.forEach({ cellClass in
-            let identifier = String.className(cellClass)
-
+            let identifier = String.className(of: cellClass)
             self.register(cellClass, forCellReuseIdentifier: identifier)
         })
     }
 
     func registerCellNibs(_ cellClasses: [AnyClass]) {
         cellClasses.forEach({ cellClass in
-            let identifier = String.className(cellClass)
+            let identifier = String.className(of: cellClass)
             let nib = UINib(nibName: identifier, bundle: nil)
 
             self.register(nib, forCellReuseIdentifier: identifier)
@@ -22,7 +21,7 @@ public extension UITableView {
 
     func registerHeaderFooterViewClasses(_ viewClasses: [AnyClass]) {
         viewClasses.forEach({ viewClass in
-            let identifier = String.className(viewClass)
+            let identifier = String.className(of: viewClass)
 
             self.register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
         })
@@ -30,7 +29,7 @@ public extension UITableView {
 
     func registerHeaderFooterViewNibs(_ viewClasses: [AnyClass]) {
         viewClasses.forEach({ viewClass in
-            let identifier = String.className(viewClass)
+            let identifier = String.className(of: viewClass)
             let nib = UINib(nibName: identifier, bundle: nil)
 
             self.register(nib, forHeaderFooterViewReuseIdentifier: identifier)

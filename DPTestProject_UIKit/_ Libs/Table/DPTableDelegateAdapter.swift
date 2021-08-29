@@ -10,7 +10,7 @@ open class DPTableDelegateAdapter: NSObject, UITableViewDelegate {
         }
     }
     
-    open var sections: [DPTableSection] {
+    open var sections: [DPTableSectionModel] {
         get {
             self.tableView?.sections ?? []
         }

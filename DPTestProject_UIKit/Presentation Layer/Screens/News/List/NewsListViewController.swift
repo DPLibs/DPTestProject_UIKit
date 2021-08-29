@@ -17,28 +17,19 @@ class NewsListViewController: DPCastViewController<NewsListViewModel, DPViewRout
     lazy var tableView: DPTableView = {
         let result = DPTableView()
         result.backgroundColor = AppTheme.current.mainBackgroundColor
-        result.register(NewsListTableRowView.self, forCellReuseIdentifier: "NewsListTableRowView")
+        result.registerCellClasses([NewsListTableRowCell.self])
         result.refreshControl = .init()
         
         return result
     }()
 
-    // MARK: - Lifecycle
-//    init(model: NewsListViewModel) {
-//        super.init(_model: model)
-//    }
-//
-//    required public init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
-    
+    // MARK: - Methods
     override func loadView() {
         super.loadView()
         
         self.view = self.tableView
     }
     
-    // MARK: - Methods
     override func setupComponets() {
         self.navigationItem.title = "News List"
         self.navigationItem.rightBarButtonItems = [
@@ -50,7 +41,7 @@ class NewsListViewController: DPCastViewController<NewsListViewModel, DPViewRout
     
     override func updateComponets() {
         self.model?.didGetList = { [weak self] lists in
-            let rows = lists.map({ NewsListTableRowView.Row(title: $0, didTap: nil) })
+            let rows = lists.map({ NewsListTableRowCell.Model(title: $0, didTap: nil) })
 
             self?.tableView.reloadData(with: [.init(rows: rows)])
         }
@@ -60,9 +51,9 @@ class NewsListViewController: DPCastViewController<NewsListViewModel, DPViewRout
     
     @objc
     private func tapAdd() {
-        let sections: [DPTableSection] = [
+        let sections: [DPTableSectionModel] = [
             .init(rows: [
-                NewsListTableRowView.Row(title: "New section", didTap: nil)
+                NewsListTableRowCell.Model(title: "New section", didTap: nil)
             ])
         ]
         

@@ -2,8 +2,8 @@ import Foundation
 
 extension String {
     
-    static func className(_ aClass: AnyClass) -> String {
-        NSStringFromClass(aClass).components(separatedBy: ".").last ?? ""
+    static func className(of object: AnyClass) -> String {
+        String(describing: object)
     }
     
 }

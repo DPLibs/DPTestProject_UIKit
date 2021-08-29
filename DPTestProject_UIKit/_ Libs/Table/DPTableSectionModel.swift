@@ -1,18 +1,18 @@
 import Foundation
 
 // MARK: - Section
-open class DPTableSection {
+open class DPTableSectionModel {
 
     // MARK: - Props
-    open var rows: [DPTableRow]
-    open var header: DPTableSectionHeader?
-    open var footer: DPTableSectionHeader?
+    open var rows: [DPTableRowModel]
+    open var header: DPTableSectionHeaderModel?
+    open var footer: DPTableSectionHeaderModel?
 
     // MARK: - Init
     public init(
-        rows: [DPTableRow],
-        header: DPTableSectionHeader? = nil,
-        footer: DPTableSectionHeader? = nil
+        rows: [DPTableRowModel],
+        header: DPTableSectionHeaderModel? = nil,
+        footer: DPTableSectionHeaderModel? = nil
     ) {
         self.rows = rows
         self.header = header
@@ -21,9 +21,9 @@ open class DPTableSection {
     
 }
 
-public extension DPTableSection {
+public extension DPTableSectionModel {
     
-    func getRow(at index: Int) -> DPTableRow? {
+    func getRow(at index: Int) -> DPTableRowModel? {
         guard self.rows.indices.contains(index) else { return nil }
         
         return self.rows[index]
@@ -32,7 +32,7 @@ public extension DPTableSection {
 }
 
 // MARK: - Array + DPTableSection
-public extension Array where Element == DPTableSection {
+public extension Array where Element == DPTableSectionModel {
     
     var rowsCount: Int {
         self.reduce(0, { $0 + $1.rows.count })
@@ -50,7 +50,7 @@ public extension Array where Element == DPTableSection {
         self.filter({ $0.footer != nil }).isEmpty
     }
     
-    func getRow(at indexPath: IndexPath) -> DPTableRow? {
+    func getRow(at indexPath: IndexPath) -> DPTableRowModel? {
         guard self.indices.contains(indexPath.section) else { return nil }
         
         return self[indexPath.section].getRow(at: indexPath.row)

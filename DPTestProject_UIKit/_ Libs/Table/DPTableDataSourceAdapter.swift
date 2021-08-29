@@ -10,7 +10,7 @@ open class DPTableDataSourceAdapter: NSObject, UITableViewDataSource {
         }
     }
     
-    open var sections: [DPTableSection] {
+    open var sections: [DPTableSectionModel] {
         get {
             self.tableView?.sections ?? []
         }

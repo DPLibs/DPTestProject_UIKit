@@ -23,7 +23,7 @@ public extension DPTableView {
 public extension DPTableView.Update {
     
     // MARK: - Insert - Sections
-    static func insertSections(_ sections: [DPTableSection], at indexSet: IndexSet, with rowAnimation: UITableView.RowAnimation) -> Self {
+    static func insertSections(_ sections: [DPTableSectionModel], at indexSet: IndexSet, with rowAnimation: UITableView.RowAnimation) -> Self {
         .init { tableView in
             for (offset, index) in indexSet.enumerated() {
                 tableView.sections.insert(sections[offset], at: index)
@@ -34,7 +34,7 @@ public extension DPTableView.Update {
     }
     
     // MARK: - Reload - Sections
-    static func reloadSections(newSections sections: [DPTableSection], at indexSet: IndexSet, with rowAnimation: UITableView.RowAnimation) -> Self {
+    static func reloadSections(newSections sections: [DPTableSectionModel], at indexSet: IndexSet, with rowAnimation: UITableView.RowAnimation) -> Self {
         .init { tableView in
             for (offset, index) in indexSet.enumerated() {
                 tableView.sections.insert(sections[offset], at: index)
@@ -62,7 +62,7 @@ public extension DPTableView.Update {
     }
     
     // MARK: - Insert - Rows
-    static func insertRows(_ rows: [DPTableRow], at indexPaths: [IndexPath], with rowAnimation: UITableView.RowAnimation) -> Self {
+    static func insertRows(_ rows: [DPTableRowModel], at indexPaths: [IndexPath], with rowAnimation: UITableView.RowAnimation) -> Self {
         .init { tableView in
             for (offset, indexPath) in indexPaths.enumerated() {
                 tableView.sections[indexPath.section].rows.insert(rows[offset], at: indexPath.row)
@@ -73,7 +73,7 @@ public extension DPTableView.Update {
     }
     
     // MARK: - Reload - Rows
-    static func reloadRows(_ rows: [DPTableRow], at indexPaths: [IndexPath], with rowAnimation: UITableView.RowAnimation) -> Self {
+    static func reloadRows(_ rows: [DPTableRowModel], at indexPaths: [IndexPath], with rowAnimation: UITableView.RowAnimation) -> Self {
         .init { tableView in
             for (offset, indexPath) in indexPaths.enumerated() {
                 tableView.sections[indexPath.section].rows.insert(rows[offset], at: indexPath.row)

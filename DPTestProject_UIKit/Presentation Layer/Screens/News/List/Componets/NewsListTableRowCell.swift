@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class NewsListTableRowView: DPTableRowView<NewsListTableRowView.Row> {
+class NewsListTableRowCell: DPTableRowCell<NewsListTableRowCell.Model> {
     
     // MARK: - Static
-    class Row: DPTableRow {
+    class Model: DPTableRowModel {
         
         override var cellIdentifier: String? {
-            NewsListTableRowView.className
+            NewsListTableRowCell.className
         }
         
         let title: String

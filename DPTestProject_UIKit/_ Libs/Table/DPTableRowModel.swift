@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-open class DPTableRow {
+open class DPTableRowModel {
     
     // MARK: - Props
     open var cellIdentifier: String? {
@@ -38,30 +38,3 @@ open class DPTableRow {
     
 }
 
-// MARK: - Cell
-open class DPTableRowView<ViewModel: DPTableRow>: DPTableViewCell {
-    
-    // MARK: - Props
-    open var viewModel: ViewModel? {
-        get {
-            self.model as? ViewModel
-        }
-        set {
-            self.model = newValue
-        }
-    }
-    
-    // MARK: - Methods
-    open override func setupViews() {
-        self.contentView.isUserInteractionEnabled = true
-        self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapGestureAction(_:))))
-    }
-
-    @objc
-    open override func tapGestureAction(_ gesture: UITapGestureRecognizer) {
-        if gesture.view == self.contentView {
-            self.viewModel?.didTap?()
-        }
-    }
-    
-}
