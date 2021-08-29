@@ -27,9 +27,9 @@ class MainTabBarController: DPTabBarController, MainTabBarControllerInput {
             
             switch item {
             case .news:
-                rootViewController = NewsListViewController(model: .init())
+                rootViewController = NewsListViewController(cast: .init(), router: .init(), errorHanlder: .init())
             case .settings:
-                rootViewController = SettingViewController(model: .init())
+                rootViewController = SettingViewController(cast: .init(), router: .init(), errorHanlder: .init())
             default:
                 rootViewController = .init()
             }

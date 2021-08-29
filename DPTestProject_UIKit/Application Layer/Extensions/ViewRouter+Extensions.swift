@@ -18,11 +18,4 @@ extension DPViewRouter {
         return vc
     }
     
-    @discardableResult
-    func showNewsDetail(model: NewsDetailViewModel) -> NewsDetailViewControllerInput {
-        let vc = NewsDetailViewController(model: model)
-        self.push(viewController: vc, animated: true)
-        
-        return vc
-    }
 }

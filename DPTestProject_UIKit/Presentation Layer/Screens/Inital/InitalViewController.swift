@@ -11,18 +11,9 @@ import UIKit
 // MARK: - ViewControllerInput
 protocol InitalViewControllerInput: DPViewControllerInput { }
 
-class InitalViewController: DPViewController, InitalViewControllerInput {
+class InitalViewController: DPCastViewController<InitalViewModel, DPViewRouter, DPViewErrorHandler>, InitalViewControllerInput {
     
     // MARK: - Props
-    var model: InitalViewModelInput? {
-        get {
-            self._model as? InitalViewModelInput
-        }
-        set {
-            self._model = newValue
-        }
-    }
-    
     lazy var titleLabel: UILabel = {
         let result = UILabel()
         result.textColor = AppTheme.current.mainTextColor
@@ -31,21 +22,13 @@ class InitalViewController: DPViewController, InitalViewControllerInput {
     }()
 
     // MARK: - Lifecycle
-    init(model: InitalViewModel) {
-        super.init(_model: model)
-    }
-    
-    required public init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
             guard let self = self else { return }
             
-            self._router?.showMain()
+            self.router?.showMain()
         }
     }
     

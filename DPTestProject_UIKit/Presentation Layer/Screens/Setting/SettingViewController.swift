@@ -11,17 +11,7 @@ import UIKit
 // MARK: - ViewControllerInput
 protocol SettingViewControllerInput: DPViewControllerInput { }
 
-class SettingViewController: DPViewController, SettingViewControllerInput {
-    
-    // MARK: - Props
-    var model: SettingViewModelInput? {
-        get {
-            self._model as? SettingViewModelInput
-        }
-        set {
-            self._model = newValue
-        }
-    }
+class SettingViewController: DPCastViewController<SettingViewModel, DPViewRouter, DPViewErrorHandler>, SettingViewControllerInput {
     
     lazy var tableView: UITableView = {
         let result = UITableView()
@@ -39,14 +29,6 @@ class SettingViewController: DPViewController, SettingViewControllerInput {
     }
 
     // MARK: - Lifecycle
-    init(model: SettingViewModel) {
-        super.init(_model: model)
-    }
-    
-    required public init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     override func loadView() {
         super.loadView()
         

@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-#warning("Append to Pod")
 public struct AppTheme {
     
     // MARK: - Static

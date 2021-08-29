@@ -14,7 +14,7 @@ class NewsListTableRowView: DPTableRowView<NewsListTableRowView.Row> {
     class Row: DPTableRow {
         
         override var cellIdentifier: String? {
-            "NewsListTableRowView"
+            NewsListTableRowView.className
         }
         
         let title: String
@@ -49,7 +49,6 @@ class NewsListTableRowView: DPTableRowView<NewsListTableRowView.Row> {
     }
     
     override func updateViews() {
-        print("!!!")
         guard let model = self.viewModel else { return }
         
         self.titleLabel.text = model.title

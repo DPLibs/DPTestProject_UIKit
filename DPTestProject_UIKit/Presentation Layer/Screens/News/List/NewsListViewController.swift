@@ -11,36 +11,26 @@ import UIKit
 // MARK: - ViewControllerInput
 protocol NewsListViewControllerInput: DPViewControllerInput { }
 
-class NewsListViewController: DPViewController, NewsListViewControllerInput {
+class NewsListViewController: DPCastViewController<NewsListViewModel, DPViewRouter, DPViewErrorHandler>, NewsListViewControllerInput {
     
     // MARK: - Props
-    var model: NewsListViewModelInput? {
-        get {
-            self._model as? NewsListViewModelInput
-        }
-        set {
-            self._model = newValue
-        }
-    }
-    
     lazy var tableView: DPTableView = {
         let result = DPTableView()
         result.backgroundColor = AppTheme.current.mainBackgroundColor
         result.register(NewsListTableRowView.self, forCellReuseIdentifier: "NewsListTableRowView")
         result.refreshControl = .init()
-        result.adapter = .init()
         
         return result
     }()
 
     // MARK: - Lifecycle
-    init(model: NewsListViewModel) {
-        super.init(_model: model)
-    }
-    
-    required public init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+//    init(model: NewsListViewModel) {
+//        super.init(_model: model)
+//    }
+//
+//    required public init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//    }
     
     override func loadView() {
         super.loadView()

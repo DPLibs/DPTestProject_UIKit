@@ -31,16 +31,29 @@ public extension DPTableSection {
     
 }
 
+// MARK: - Array + DPTableSection
 public extension Array where Element == DPTableSection {
+    
+    var rowsCount: Int {
+        self.reduce(0, { $0 + $1.rows.count })
+    }
+    
+    var rowsIsEmpty: Bool {
+        self.rowsCount == 0
+    }
+    
+    var headersIsEmpty: Bool {
+        self.filter({ $0.header != nil }).isEmpty
+    }
+    
+    var footersIsEmpty: Bool {
+        self.filter({ $0.footer != nil }).isEmpty
+    }
     
     func getRow(at indexPath: IndexPath) -> DPTableRow? {
         guard self.indices.contains(indexPath.section) else { return nil }
         
         return self[indexPath.section].getRow(at: indexPath.row)
-    }
-    
-    var rowsCount: Int {
-        self.reduce(0, { $0 + $1.rows.count })
     }
     
 }

@@ -4,11 +4,14 @@
 ////
 ////  Created by mac mini on 22.12.2020.
 ////
+
+
 //
 //import Foundation
 //import GKRepresentable
 //
 //class TableCellWithSwipeAction: TableCell {
+
 //    
 //    public var didBeginEdit: ((UITableViewCell) -> Void)?
 //    public var didEndEdit: ((UITableViewCell) -> Void)?

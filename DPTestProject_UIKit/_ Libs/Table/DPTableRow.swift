@@ -22,11 +22,20 @@ open class DPTableRow {
     public init(didTap: (() -> Void)? = nil) {
         self.didTap = didTap
     }
-//        open func createLeadingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? { .empty }
-//        open func createTrailingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? { .empty }
-//        open func createEditActions(for cell: UITableViewCell) -> [UITableViewRowAction]? { [] }
-//        open func willBeginEditing(for cell: UITableViewCell) { }
-//        open func didEndEditing(for cell: UITableViewCell) { }
+    
+    // MARK: - Methods
+    open func createLeadingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? {
+        .empty
+    }
+    
+    open func createTrailingSwipeActionsConfiguration(for cell: UITableViewCell) -> UISwipeActionsConfiguration? {
+        .empty
+    }
+    
+    open func willBeginEditing(for cell: UITableViewCell) { }
+    
+    open func didEndEditing(for cell: UITableViewCell) { }
+    
 }
 
 // MARK: - Cell

@@ -1,47 +1,4 @@
-//import Foundation
-//import UIKit
-//import GKRepresentable
-//
-//// MARK: - Input
-//public protocol CollectionAdapterInput {
-//    func subscribe(output: CollectionAdapterOutput)
-//    func subscribe(outputUI: CollectionAdapterOutputUI)
-//    
-//    func setupCollection(_ collection: UICollectionView?)
-//    func setupPlugins(_ plugins: [DataSourceAdapterPlugin])
-//    
-//    var sections: [CollectionSectionRepresentable] { get }
-//    
-//    var isRefreshing: Bool { get }
-//    
-//    func beginRefreshing()
-//    func endRefreshing()
-//    
-//    func updateEmptyViewAuto()
-//    func updateEmptyView(isHidden: Bool)
-//    
-//    func reload(sections: [CollectionSectionRepresentable])
-//    func perfrom(sectionActions: [CollectionSectionCruderAction], completion: ((Bool) -> Void)?)
-//    func perform(sectionAction: CollectionSectionCruderAction, completion: ((Bool) -> Void)?)
-//    func reloadOrAppendSections(needReload: Bool, sections: [CollectionSectionRepresentable])
-//    
-//    func reload(items: [CollectionCellIdentifiable], sectionIndex: Int)
-//    func perfrom(itemActions: [CollectionItemCruderAction], completion: ((Bool) -> Void)?)
-//    func perform(itemAction: CollectionItemCruderAction, completion: ((Bool) -> Void)?)
-//    func reloadOrAppendItems(needReload: Bool, items: [CollectionCellIdentifiable], sectionIndex: Int)
-//    
-//    func indexPath(for cell: UICollectionViewCell?) -> IndexPath?
-//    func getRow<T: CollectionCellIdentifiable>(_ getType: DataSourceGetDataType, isAn type: T.Type) -> CollectionItem<T>?
-//    func setRow<T: CollectionCellIdentifiable>(_ data: CollectionItem<T>)
-//    func getSection<T: CollectionSectionRepresentable>(_ getType: DataSourceGetDataType, isAn type: T.Type) -> TableSection<T>?
-//    func setSection<T: CollectionSectionRepresentable>(_ data: CollectionSection<T>)
-//    
-//    func scrollToItem(at indexPath: IndexPath, position: UICollectionView.ScrollPosition, animated: Bool)
-//    func scrollToItem(for cell: UICollectionViewCell?, position: UICollectionView.ScrollPosition, animated: Bool)
-//     
-//    var customPagingMode: CollectionAdapter.CustomPagingMode { get set }
-//}
-//
+
 //// MARK: - Output
 //public protocol CollectionAdapterOutput: AnyObject {
 //    func beginRefreshing(adapter: CollectionAdapter)

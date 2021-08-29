@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-open class NotificationObserver: NSObject {
+open class DPNotificationObserver: NSObject {
     
     // MARK: - Static
     public struct Observer {
